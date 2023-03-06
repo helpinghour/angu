@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,8 +15,8 @@ import { FooterComponent } from './include/footer/footer.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    StoresComponent
+    // HomeComponent,
+    // StoresComponent
   ],
   imports: [
     BrowserModule,
