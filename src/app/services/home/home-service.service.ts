@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
-
 @Injectable({
   providedIn: 'root'
 })
 
-export class CouponService {
+export class HomeServiceService {
 
   couponsHome = "https://adscombined.com/v1/public/api/FilterCoupons?filter=Coupon&Page=0&PerPage=15&Filter=Coupon";
-
-  constructor(private coupons: HttpClient) { }
+  cashbackHome = "https://adscombined.com/v1/public/api/FilterCoupons?filter=Cash%20Back&Page=0&PerPage=15&Filter=Cash%20Back";
+  
+  constructor(private coupons: HttpClient, private cashback: HttpClient) { }
   
   getHomeCoupon() {
     return this.coupons.post( this.couponsHome, {} );
+  }
+  getHomeCashback(){
+    return this.cashback.post( this.cashbackHome, {});
   }
 
 }

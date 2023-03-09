@@ -1,549 +1,531 @@
 <section id="hero-static" class="hero-static d-flex align-items-center">
-    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative">
-      <h2>Find Top <span>Promotions</span></h2>
-      <div class="input-group mb-3 input-group-sm f-search">
-        <select class=" border-0 bg-primary text-white rounded-pill-start mw-max-c f-search-select" id="" size="" style="    padding: .25rem .5rem; font-size: .875rem; border-radius: .25rem 0 0 .25rem;">
-          <option selected>Deals</option>
-          <option value="1">Coupons</option>
-        </select>
-        <input type="search" class="form-control hide-focus border-primary border-2 border-end-0 f-search-input" placeholder="search doupons or deals" aria-label="Username" aria-describedby="basic-addon1">
-        <button class="f-search-icon bg-primary border-primary btn ">
+  <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative">
+    <h2>Find Top <span>Promotions</span></h2>
+    <div class="input-group mb-3 input-group-sm f-search">
+      <select class=" border-0 bg-primary text-white rounded-pill-start mw-max-c f-search-select" id="" size=""
+        style="    padding: .25rem .5rem; font-size: .875rem; border-radius: .25rem 0 0 .25rem;">
+        <option selected>Deals</option>
+        <option value="1">Coupons</option>
+      </select>
+      <input type="search" class="form-control hide-focus border-primary border-2 border-end-0 f-search-input"
+        placeholder="search doupons or deals" aria-label="Username" aria-describedby="basic-addon1">
+      <button class="f-search-icon bg-primary border-primary btn ">
         <span class=" border-2 border-start-0 ps-1" id="basic-addon1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--bs-white)" stroke="var(--bs-white)" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--bs-white)" stroke="var(--bs-white)"
+            class="bi bi-search" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
         </span>
-        </button>
+      </button>
+    </div>
+  </div>
+</section>
+<main id="main">
+
+  <div class="container">
+    <h2 class="text-center"><a href="/coupons/all">{{allCounts.total_coupons}} Coupons</a> & <a
+        href="/deals">{{allCounts.total_deals}} Deals</a> from <a href="/onlinestores">{{allCounts.total_stores}} Online
+        Stores</a> , <a href="/onlinebrands">{{allCounts.total_brands}} Brands</a> & <a
+        href="/onlineretailers">{{allCounts.total_retailers}} Retailers</a></h2>
+  </div>
+  <section>
+    <div class="container">
+      <div class="links-updated container-fullwidth coupon-codes">
+        <div>
+          <div class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Apparel-Accessories.png" alt="Apparel & Accessories">
+            <p>Apparel &amp; Accessories</p>
+          </div>
+          <div class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Arts-Entertainment.png" alt="">
+            <p>Arts &amp; Entertainment</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Automotive and Mechanics&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Automotive-Mechanics.png" alt="">
+            <p>Automotive &amp; Mechanics</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Baby and Nursery&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/baby.png" alt="">
+            <p>Baby &amp; Nursery</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Beauty&amp;im=c')" class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Beauty.png" alt="">
+            <p>Beauty</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Books, Music and Video&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Books-Music-Video.png" alt="">
+            <p>Books, Mucic &amp; Video</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Computers and Software&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/computer.png" alt="">
+            <p>Computer &amp; Software</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Education and Training&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/education.png" alt="">
+            <p>Education &amp; Training</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Electronics&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/electronics.png" alt="">
+            <p>Electronics</p>
+          </div>
+        </div>
+        <div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Flowers and Gifts&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/flowers.png" alt="">
+            <p>Flowers &amp; Gifts</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Food and Beverage&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/food.png" alt="">
+            <p>Food &amp; Beverage</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Health and Medicine&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Health &amp; Medicine.png" alt="">
+            <p>Health &amp; Medicine</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Holiday and Seasonal&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Holiday-Seasonal.png" alt="">
+            <p>Holiday &amp; Seasonal</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Home and Garden&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/home.png" alt="">
+            <p>Home &amp; Garden</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Toys and Games&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Toys-Games.png" alt="">
+            <p>Toy &amp; Games</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Travel&amp;im=c')" class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/travling.png" alt="">
+            <p>Travel</p>
+          </div>
+          <div
+            onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Wireless, Broadband and Cable&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Wireless-Broadband-Cable.png" alt="">
+            <p>Wireless, Broadband &amp; Cable</p>
+          </div>
+          <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Pet Care and Supplies&amp;im=c')"
+            class="link-item">
+            <img src="https://bagtheprice.com/image/top-links/Pet-Care-Supplies.png" alt="">
+            <p>Pet Care &amp; Supplies</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <main id="main">
-   
-      <div class="container">
-      <h2 class="text-center"><a href="/coupons/all">{{allCounts.total_coupons}} Coupons</a> & <a href="/deals">{{allCounts.total_deals}} Deals</a> from <a href="/onlinestores">{{allCounts.total_stores}} Online Stores</a> , <a href="/onlinebrands">{{allCounts.total_brands}} Brands</a> & <a href="/onlineretailers">{{allCounts.total_retailers}} Retailers</a></h2>
-    </div>
-    <section>
-      <div class="container" >
-        <div class="links-updated container-fullwidth coupon-codes">
-          <div>
-            <div class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Apparel-Accessories.png" alt="Apparel & Accessories">
-              <p>Apparel &amp; Accessories</p>
-            </div>
-            <div class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Arts-Entertainment.png" alt="">
-              <p>Arts &amp; Entertainment</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Automotive and Mechanics&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Automotive-Mechanics.png" alt="">
-              <p>Automotive &amp; Mechanics</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Baby and Nursery&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/baby.png" alt="">
-              <p>Baby &amp; Nursery</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Beauty&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Beauty.png" alt="">
-              <p>Beauty</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Books, Music and Video&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Books-Music-Video.png" alt="">
-              <p>Books, Mucic &amp; Video</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Computers and Software&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/computer.png" alt="">
-              <p>Computer &amp; Software</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Education and Training&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/education.png" alt="">
-              <p>Education &amp; Training</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Electronics&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/electronics.png" alt="">
-              <p>Electronics</p>
-            </div>
-          </div>
-          <div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Flowers and Gifts&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/flowers.png" alt="">
-              <p>Flowers &amp; Gifts</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Food and Beverage&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/food.png" alt="">
-              <p>Food &amp; Beverage</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Health and Medicine&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Health &amp; Medicine.png" alt="">
-              <p>Health &amp; Medicine</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Holiday and Seasonal&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Holiday-Seasonal.png" alt="">
-              <p>Holiday &amp; Seasonal</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Home and Garden&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/home.png" alt="">
-              <p>Home &amp; Garden</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Toys and Games&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Toys-Games.png" alt="">
-              <p>Toy &amp; Games</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Travel&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/travling.png" alt="">
-              <p>Travel</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Wireless, Broadband and Cable&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Wireless-Broadband-Cable.png" alt="">
-              <p>Wireless, Broadband &amp; Cable</p>
-            </div>
-            <div onclick="dealClicked('https\://bagtheprice.com/store-detail.html?s=Pet Care and Supplies&amp;im=c')" class="link-item">
-              <img src="https://bagtheprice.com/image/top-links/Pet-Care-Supplies.png" alt="">
-              <p>Pet Care &amp; Supplies</p>
-            </div>
-          </div>
-        </div>
+  <!-- Coupon Section -->
+  <section>
+    <div class="container">
+      <div class="sec-head coup-head">
+        <h2>Coupons</h2>
       </div>
-    </section>
-    <!-- Coupon Section -->
-    <section>
-      <div class="container">
-        <div class="sec-head coup-head">
-          <h2>Coupons</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="card coupon-card mt-2 mb-3">
-              <div class="card-up aqua-gradient">
-                <h5 class="text-center my-2">Short description of coupon with discount</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center bg-success text-white rounded py-2 px-3">Up to 50% OFF</span></p>
-                <span class="text-center">YWD832</span>
-                <hr>
-                <div class="d-flex justify-content-center coupon-dates">
-                  <div class="last-seen">
-                    <p>Last Seen</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                  <div class="found-on">
-                    <p>Found on</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="card coupon-card mt-2 mb-3">
-              <div class="card-up aqua-gradient">
-                <h5 class="text-center my-2">Short description of coupon with discount</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center bg-success text-white rounded py-2 px-3">Up to 50% OFF</span></p>
-                <span class="text-center">YWD832</span>
-                <hr>
-                <div class="d-flex justify-content-center coupon-dates">
-                  <div class="last-seen">
-                    <p>Last Seen</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                  <div class="found-on">
-                    <p>Found on</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="card coupon-card mt-2 mb-3">
-              <div class="card-up aqua-gradient">
-                <h5 class="text-center my-2">Short description of coupon with discount</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center bg-success text-white rounded py-2 px-3">Up to 50% OFF</span></p>
-                <span class="text-center">YWD832</span>
-                <hr>
-                <div class="d-flex justify-content-center coupon-dates">
-                  <div class="last-seen">
-                    <p>Last Seen</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                  <div class="found-on">
-                    <p>Found on</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="card coupon-card mt-2 mb-3">
-              <div class="card-up aqua-gradient">
-                <h5 class="text-center my-2">Short description of coupon with discount</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center bg-success text-white rounded py-2 px-3">Up to 50% OFF</span></p>
-                <span class="text-center">YWD832</span>
-                <hr>
-                <div class="d-flex justify-content-center coupon-dates">
-                  <div class="last-seen">
-                    <p>Last Seen</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                  <div class="found-on">
-                    <p>Found on</p>
-                    <p>Mar 3 2023</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-    <!-- Coupon Section End -->
-    <!-- Cash back section -->
-    <section class="cash-back">
-      <div class="container">
-        <div class="sec-head cash-head">
-          <h2>Cash <span>Back</span></h2>
-        </div>
-        <div class="row d-flex align-items-stretch mt-4">
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="card p-3 mb-2">
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                  <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img"> </div>
-                </div>
-                <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-              </div>
-              <div class="mt-1 text-limit-3 ">
-                <button class="btn btn-primary my-2">Cash Back</button>
-                <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="card p-3 mb-2">
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                  <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img"> </div>
-                </div>
-                <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-              </div>
-              <div class="mt-1 text-limit-3 ">
-                <button class="btn btn-primary my-2">Cash Back</button>
-                <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="card p-3 mb-2">
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                  <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img"> </div>
-                </div>
-                <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-              </div>
-              <div class="mt-1 text-limit-3 ">
-                <button class="btn btn-primary my-2">Cash Back</button>
-                <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="card p-3 mb-2">
-              <div class="d-flex justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                  <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img"> </div>
-                </div>
-                <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-              </div>
-              <div class="mt-1 text-limit-3 ">
-                <button class="btn btn-primary my-2">Cash Back</button>
-                <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Cash back section -->
-    <!-- Get One Free (BOGO) section -->
-    <section class="bogo-sec">
-      <div class="container">
-        <div class="sec-head coup-head">
-          <h2>Get One Free (BOGO)</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-2 col-md-6 col-12">
-            <div class="card bogo-card mt-2 mb-3">
-              <div class="card-up bogo-card-head">
-                <h5 class="text-center my-2">$350 off</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center">Ends Today: Save</span></p>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-12">
-            <div class="card bogo-card mt-2 mb-3">
-              <div class="card-up bogo-card-head">
-                <h5 class="text-center my-2">$350 off</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center">Ends Today: Save</span></p>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-12">
-            <div class="card bogo-card mt-2 mb-3">
-              <div class="card-up bogo-card-head">
-                <h5 class="text-center my-2">$350 off</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center">Ends Today: Save</span></p>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-12">
-            <div class="card bogo-card mt-2 mb-3">
-              <div class="card-up bogo-card-head">
-                <h5 class="text-center my-2">$350 off</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center">Ends Today: Save</span></p>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-12">
-            <div class="card bogo-card mt-2 mb-3">
-              <div class="card-up bogo-card-head">
-                <h5 class="text-center my-2">$350 off</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center">Ends Today: Save</span></p>
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-12">
-            <div class="card bogo-card mt-2 mb-3">
-              <div class="card-up bogo-card-head">
-                <h5 class="text-center my-2">$350 off</h5>
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="avatar mx-auto white">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-              </div>
-              <div class="card-body text-center">
-                <p><span class="text-center">Ends Today: Save</span></p>
-                
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-    <!-- Get One Free (BOGO) section / -->
-    <!-- ======= Deals Section ======= -->
-    <section id="services" class="services deals-sec">
-      <div class="container">
-        <div class="sec-head deals-head mb-3">
-          <h2>Top Deals</h2>
-        </div>
-        <div class="row gy-5">
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-          <div class="col-xl-3 col-md-4 col-12">
-            <div class="deal-item service-item">
-              <span class="deals-off-des">Save 40%</span>
-              <div class="img deals-img">
-                <img src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg" class="img-fluid" alt="">
-                <i class="bi bi-heart"></i>
-              </div>
-              <div class="details position-relative">
-                <div class="d-logo">
-                  <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-                </div>
-                <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-                <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-              </div>
-            </div>
-          </div>
-          <!-- End Deals Item -->
-        </div>
-      </div>
-      </section><!-- End Deals Section -->
-      </main><!-- End #main -->
+      <div class="row">
 
+        <!-- <div class="col-lg-3 col-md-6" *ngFor = "let coupVal of this.homeCoupon"> -->
+          <div class="col-lg-3 col-md-6" *ngFor="let coupVal of this.homeCoupon.coupons.slice(0, 4)">
+          <div class="card coupon-card mt-2 mb-3">
+            <div class="card-up aqua-gradient">
+              <h5 class="text-center my-2">{{ coupVal.Title }}</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://adscombined.com/admin/public/storage/{{coupVal.Logo}}" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center bg-success text-white rounded py-2 px-3">{{ coupVal.Offer }}</span></p>
+              <span class="text-center">{{ coupVal.Code }}</span>
+              <hr>
+              <div class="d-flex justify-content-center coupon-dates">
+                <div class="last-seen">
+                  <p>Last Seen</p>
+                  <p>{{ coupVal.DateAdded }}</p>
+                </div>
+                <div class="found-on">
+                  <p>Found on</p>
+                  <p>{{ coupVal.DateUpdated }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <!-- Coupon Section End -->
+
+  <!-- Cash back section -->
+  <section class="cash-back">
+    <div class="container">
+      <div class="sec-head cash-head">
+        <h2>Cash <span>Back</span></h2>
+      </div>
+      <div class="row d-flex align-items-stretch mt-4">
+        <div class="col-lg-3 col-md-6 col-12" *ngFor="let cashback of this.homeCashback.coupons">
+          <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="logo-contain"> <img src="https://adscombined.com/admin/public/storage/{{cashback.Logo}}" alt="img">
+                </div>
+              </div>
+              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
+            </div>
+            <div class="mt-1 text-limit-3 ">
+              <button class="btn btn-primary my-2">{{cashback.Type}}</button>
+              <p>{{cashback.Title}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Cash back section -->
+  <!-- Get One Free (BOGO) section -->
+  <section class="bogo-sec">
+    <div class="container">
+      <div class="sec-head coup-head">
+        <h2>Get One Free (BOGO)</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-md-6 col-12">
+          <div class="card bogo-card mt-2 mb-3">
+            <div class="card-up bogo-card-head">
+              <h5 class="text-center my-2">$350 off</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center">Ends Today: Save</span></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-12">
+          <div class="card bogo-card mt-2 mb-3">
+            <div class="card-up bogo-card-head">
+              <h5 class="text-center my-2">$350 off</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center">Ends Today: Save</span></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-12">
+          <div class="card bogo-card mt-2 mb-3">
+            <div class="card-up bogo-card-head">
+              <h5 class="text-center my-2">$350 off</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center">Ends Today: Save</span></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-12">
+          <div class="card bogo-card mt-2 mb-3">
+            <div class="card-up bogo-card-head">
+              <h5 class="text-center my-2">$350 off</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center">Ends Today: Save</span></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-12">
+          <div class="card bogo-card mt-2 mb-3">
+            <div class="card-up bogo-card-head">
+              <h5 class="text-center my-2">$350 off</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center">Ends Today: Save</span></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-12">
+          <div class="card bogo-card mt-2 mb-3">
+            <div class="card-up bogo-card-head">
+              <h5 class="text-center my-2">$350 off</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center">Ends Today: Save</span></p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Get One Free (BOGO) section / -->
+
+  <!-- Events section -->
+  <section class="f-events">
+    <div class="container">
+      <div class="sec-head cash-head">
+        <h2>Events</h2>
+      </div>
+      <div class="row d-flex align-items-stretch mt-4">
+        <div class="col-lg-2 col-md-4 col-12">
+          <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
+                </div>
+              </div>
+              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
+            </div>
+            <div class="mt-1 text-limit-3 ">
+              <span class="btn btn-primary my-2">Cash Back</span>
+              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
+                </div>
+              </div>
+              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
+            </div>
+            <div class="mt-1 text-limit-3 ">
+              <span class="btn btn-primary my-2">Cash Back</span>
+              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
+                </div>
+              </div>
+              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
+            </div>
+            <div class="mt-1 text-limit-3 ">
+              <span class="btn btn-primary my-2">Cash Back</span>
+              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
+                </div>
+              </div>
+              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
+            </div>
+            <div class="mt-1 text-limit-3 ">
+              <span class="btn btn-primary my-2">Cash Back</span>
+              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
+                </div>
+              </div>
+              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
+            </div>
+            <div class="mt-1 text-limit-3 ">
+              <span class="btn btn-primary my-2">Cash Back</span>
+              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+          <div class="card p-3 mb-2">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
+                </div>
+              </div>
+              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
+            </div>
+            <div class="mt-1 text-limit-3 ">
+              <span class="btn btn-primary my-2">Cash Back</span>
+              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Events section end -->
+  <!-- ======= Deals Section ======= -->
+  <section id="services" class="services deals-sec">
+    <div class="container">
+      <div class="sec-head deals-head mb-3">
+        <h2>Top Deals</h2>
+      </div>
+      <div class="row gy-5">
+        <div class="col-xl-3 col-md-4 col-12">
+          <div class="deal-item service-item">
+            <span class="deals-off-des">Save 40%</span>
+            <div class="img deals-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
+                class="img-fluid" alt="">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="details position-relative">
+              <div class="d-logo">
+                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+              </div>
+              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
+              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
+            </div>
+          </div>
+        </div>
+        <!-- End Deals Item -->
+        <div class="col-xl-3 col-md-4 col-12">
+          <div class="deal-item service-item">
+            <span class="deals-off-des">Save 40%</span>
+            <div class="img deals-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
+                class="img-fluid" alt="">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="details position-relative">
+              <div class="d-logo">
+                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+              </div>
+              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
+              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
+            </div>
+          </div>
+        </div>
+        <!-- End Deals Item -->
+        <div class="col-xl-3 col-md-4 col-12">
+          <div class="deal-item service-item">
+            <span class="deals-off-des">Save 40%</span>
+            <div class="img deals-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
+                class="img-fluid" alt="">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="details position-relative">
+              <div class="d-logo">
+                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+              </div>
+              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
+              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
+            </div>
+          </div>
+        </div>
+        <!-- End Deals Item -->
+        <div class="col-xl-3 col-md-4 col-12">
+          <div class="deal-item service-item">
+            <span class="deals-off-des">Save 40%</span>
+            <div class="img deals-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
+                class="img-fluid" alt="">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="details position-relative">
+              <div class="d-logo">
+                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+              </div>
+              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
+              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
+            </div>
+          </div>
+        </div>
+        <!-- End Deals Item -->
+        <div class="col-xl-3 col-md-4 col-12">
+          <div class="deal-item service-item">
+            <span class="deals-off-des">Save 40%</span>
+            <div class="img deals-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
+                class="img-fluid" alt="">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="details position-relative">
+              <div class="d-logo">
+                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+              </div>
+              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
+              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
+            </div>
+          </div>
+        </div>
+        <!-- End Deals Item -->
+        <div class="col-xl-3 col-md-4 col-12">
+          <div class="deal-item service-item">
+            <span class="deals-off-des">Save 40%</span>
+            <div class="img deals-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
+                class="img-fluid" alt="">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="details position-relative">
+              <div class="d-logo">
+                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+              </div>
+              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
+              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
+            </div>
+          </div>
+        </div>
+        <!-- End Deals Item -->
+      </div>
+    </div>
+  </section><!-- End Deals Section -->
+</main><!-- End #main -->

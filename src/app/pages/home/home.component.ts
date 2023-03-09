@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AllcountsService } from 'src/app/services/allcounts.service';
-import { CouponService } from 'src/app/services/home/coupon.service'
+import { HomeServiceService } from 'src/app/services/home/home-service.service';
 
 @Component({
   selector: 'app-home',
@@ -9,21 +9,27 @@ import { CouponService } from 'src/app/services/home/coupon.service'
 })
 export class HomeComponent {
   allCounts: any;
+  total_coupons: any;
   homeCoupon: any;
-  /**
-   *
-   */
-  constructor( private allCount:AllcountsService, private homeCoupons:CouponService) { }
+  homeCashback: any;
+  
+  
+  constructor(
+    private allCount:AllcountsService,
+    private homeCoupons:HomeServiceService,
+    private cashBack:HomeServiceService,
+    ) { }
 
   ngOnInit(){
-    this.allCount.getAllCounts().subscribe( response =>{
-      this.allCounts = response;
+    this.allCount.getAllCounts().subscribe( (counts:any) =>{ //counts is a any type that will get data response from service
+      this.allCounts = counts;
     });
-    this.homeCoupons.getHomeCoupon().subscribe( response =>{
-      this.homeCoupon = response;
-      console.log(this.homeCoupon);
-    })
+    this.homeCoupons.getHomeCoupon().subscribe( (coup:any) =>{ //getHomeCoupon is method in service
+      this.homeCoupon = coup;
+    });
+    this.cashBack.getHomeCashback().subscribe( (cashb:any) =>{
+      this.homeCashback = cashb;
+    });
   }
   
-
 }
