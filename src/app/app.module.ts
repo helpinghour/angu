@@ -8,9 +8,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './include/header/header.component';
 import { FooterComponent } from './include/footer/footer.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RetailersComponent } from './pages/retailers/retailers.component';
+import { BrandsComponent } from './pages/brands/brands.component';
+import { DealsComponent } from './pages/deals/deals.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +23,9 @@ import { HomeComponent } from './pages/home/home.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    RetailersComponent,
+    BrandsComponent,
+    DealsComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +33,7 @@ import { HomeComponent } from './pages/home/home.component';
     HttpClientModule,
     BrowserModule,
     CommonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

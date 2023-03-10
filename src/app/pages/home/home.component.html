@@ -1,26 +1,4 @@
-<section id="hero-static" class="hero-static d-flex align-items-center">
-  <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative">
-    <h2>Find Top <span>Promotions</span></h2>
-    <div class="input-group mb-3 input-group-sm f-search">
-      <select class=" border-0 bg-primary text-white rounded-pill-start mw-max-c f-search-select" id="" size=""
-        style="    padding: .25rem .5rem; font-size: .875rem; border-radius: .25rem 0 0 .25rem;">
-        <option selected>Deals</option>
-        <option value="1">Coupons</option>
-      </select>
-      <input type="search" class="form-control hide-focus border-primary border-2 border-end-0 f-search-input"
-        placeholder="search doupons or deals" aria-label="Username" aria-describedby="basic-addon1">
-      <button class="f-search-icon bg-primary border-primary btn ">
-        <span class=" border-2 border-start-0 ps-1" id="basic-addon1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--bs-white)" stroke="var(--bs-white)"
-            class="bi bi-search" viewBox="0 0 16 16">
-            <path
-              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-          </svg>
-        </span>
-      </button>
-    </div>
-  </div>
-</section>
+
 <main id="main">
 
   <div class="container">
@@ -28,6 +6,12 @@
         href="/deals">{{allCounts.total_deals}} Deals</a> from <a href="/onlinestores">{{allCounts.total_stores}} Online
         Stores</a> , <a href="/onlinebrands">{{allCounts.total_brands}} Brands</a> & <a
         href="/onlineretailers">{{allCounts.total_retailers}} Retailers</a></h2>
+    <div class="row">
+      <div class="img-responsive col-md-12">
+        <img class="img-responsive" src="https://blogs-images.forbes.com/gabrielshaoolian/files/2017/07/quickbooks.png"
+          style="height: 100%; width: 100%;">
+      </div>
+    </div>
   </div>
   <section>
     <div class="container">
@@ -132,10 +116,10 @@
       <div class="sec-head coup-head">
         <h2>Coupons</h2>
       </div>
-      <div class="row">
 
+      <div class="row">
         <!-- <div class="col-lg-3 col-md-6" *ngFor = "let coupVal of this.homeCoupon"> -->
-          <div class="col-lg-3 col-md-6" *ngFor="let coupVal of this.homeCoupon.coupons.slice(0, 4)">
+        <div class="col-lg-3 col-md-6" *ngFor="let coupVal of this.homeCoupon.coupons.slice(0, 4)">
           <div class="card coupon-card mt-2 mb-3">
             <div class="card-up aqua-gradient">
               <h5 class="text-center my-2">{{ coupVal.Title }}</h5>
@@ -162,8 +146,8 @@
             </div>
           </div>
         </div>
-        
       </div>
+
     </div>
   </section>
   <!-- Coupon Section End -->
@@ -179,7 +163,8 @@
           <div class="card p-3 mb-2">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
-                <div class="logo-contain"> <img src="https://adscombined.com/admin/public/storage/{{cashback.Logo}}" alt="img">
+                <div class="logo-contain"> <img src="https://adscombined.com/admin/public/storage/{{cashback.Logo}}"
+                    alt="img">
                 </div>
               </div>
               <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
@@ -201,98 +186,18 @@
         <h2>Get One Free (BOGO)</h2>
       </div>
       <div class="row">
-        <div class="col-lg-2 col-md-6 col-12">
+        <div class="col-lg-2 col-md-6 col-12 align-items-stretch" *ngFor="let bogo of this.boGo.coupons.slice(0,6)">
           <div class="card bogo-card mt-2 mb-3">
             <div class="card-up bogo-card-head">
-              <h5 class="text-center my-2">$350 off</h5>
+              <h5 class="text-center my-2">{{bogo.Offer}}</h5>
               <i class="bi bi-heart"></i>
             </div>
             <div class="avatar mx-auto white">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+              <img src="https://adscombined.com/admin/public/storage/{{bogo.Logo}}" class="img-fluid"
                 alt="woman avatar">
             </div>
             <div class="card-body text-center">
-              <p><span class="text-center">Ends Today: Save</span></p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-12">
-          <div class="card bogo-card mt-2 mb-3">
-            <div class="card-up bogo-card-head">
-              <h5 class="text-center my-2">$350 off</h5>
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="avatar mx-auto white">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-            </div>
-            <div class="card-body text-center">
-              <p><span class="text-center">Ends Today: Save</span></p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-12">
-          <div class="card bogo-card mt-2 mb-3">
-            <div class="card-up bogo-card-head">
-              <h5 class="text-center my-2">$350 off</h5>
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="avatar mx-auto white">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-            </div>
-            <div class="card-body text-center">
-              <p><span class="text-center">Ends Today: Save</span></p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-12">
-          <div class="card bogo-card mt-2 mb-3">
-            <div class="card-up bogo-card-head">
-              <h5 class="text-center my-2">$350 off</h5>
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="avatar mx-auto white">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-            </div>
-            <div class="card-body text-center">
-              <p><span class="text-center">Ends Today: Save</span></p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-12">
-          <div class="card bogo-card mt-2 mb-3">
-            <div class="card-up bogo-card-head">
-              <h5 class="text-center my-2">$350 off</h5>
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="avatar mx-auto white">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-            </div>
-            <div class="card-body text-center">
-              <p><span class="text-center">Ends Today: Save</span></p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-12">
-          <div class="card bogo-card mt-2 mb-3">
-            <div class="card-up bogo-card-head">
-              <h5 class="text-center my-2">$350 off</h5>
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="avatar mx-auto white">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
-                alt="woman avatar">
-            </div>
-            <div class="card-body text-center">
-              <p><span class="text-center">Ends Today: Save</span></p>
+              <p><span class="text-center" title="{{bogo.Title}}">{{bogo.Title}}</span></p>
 
             </div>
           </div>
@@ -310,93 +215,19 @@
         <h2>Events</h2>
       </div>
       <div class="row d-flex align-items-stretch mt-4">
-        <div class="col-lg-2 col-md-4 col-12">
+        <div class="col-lg-2 col-md-4 col-12" *ngFor="let event of this.eventsData.coupons.slice(0,6)">
           <div class="card p-3 mb-2">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
-                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
+                <div class="logo-contain"> <img src="https://adscombined.com/admin/public/storage/{{event.Logo}}"
+                    alt="img">
                 </div>
               </div>
               <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
             </div>
             <div class="mt-1 text-limit-3 ">
-              <span class="btn btn-primary my-2">Cash Back</span>
-              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-12">
-          <div class="card p-3 mb-2">
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row align-items-center">
-                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
-                </div>
-              </div>
-              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-            </div>
-            <div class="mt-1 text-limit-3 ">
-              <span class="btn btn-primary my-2">Cash Back</span>
-              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-12">
-          <div class="card p-3 mb-2">
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row align-items-center">
-                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
-                </div>
-              </div>
-              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-            </div>
-            <div class="mt-1 text-limit-3 ">
-              <span class="btn btn-primary my-2">Cash Back</span>
-              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-12">
-          <div class="card p-3 mb-2">
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row align-items-center">
-                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
-                </div>
-              </div>
-              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-            </div>
-            <div class="mt-1 text-limit-3 ">
-              <span class="btn btn-primary my-2">Cash Back</span>
-              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-12">
-          <div class="card p-3 mb-2">
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row align-items-center">
-                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
-                </div>
-              </div>
-              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-            </div>
-            <div class="mt-1 text-limit-3 ">
-              <span class="btn btn-primary my-2">Cash Back</span>
-              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-12">
-          <div class="card p-3 mb-2">
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row align-items-center">
-                <div class="logo-contain"> <img src="https://www.bagtheprice.com/logos/wex-photo-video.png" alt="img">
-                </div>
-              </div>
-              <div class="fav-icon"> <i class="bi bi-heart text-dark"></i> </div>
-            </div>
-            <div class="mt-1 text-limit-3 ">
-              <span class="btn btn-primary my-2">Cash Back</span>
-              <p>Check Out What We Are Giving Away. sdfd dsfdss dsfds Cashback Offers</p>
+              <span class="btn btn-primary my-2">{{event.Offer}}</span>
+              <p>{{event.Title}}</p>
             </div>
           </div>
         </div>
@@ -404,6 +235,54 @@
     </div>
   </section>
   <!-- Events section end -->
+
+  <!-- Sales and Clearance Section -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="img-responsive col-md-12">
+          <img class="img-responsive" src="https://blogs-images.forbes.com/gabrielshaoolian/files/2017/07/quickbooks.png"
+            style="height: 100%; width: 100%;">
+        </div>
+      </div>
+      <div class="sec-head sales-head">
+        <h2>Sale & Clearance</h2>
+      </div>
+
+      <div class="row">
+        <!-- <div class="col-lg-3 col-md-6" *ngFor = "let coupVal of this.homeCoupon"> -->
+        <div class="col-lg-3 col-md-6" *ngFor="let salesD of this.salesData.coupons">
+          <div class="card coupon-card sales-card mt-2 mb-3">
+            <div class="card-up aqua-gradient">
+              <h5 class="text-center my-2">{{ salesD.Title }}</h5>
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="avatar mx-auto white">
+              <img src="https://adscombined.com/admin/public/storage/{{salesD.Logo}}" class="rounded-circle img-fluid"
+                alt="woman avatar">
+            </div>
+            <div class="card-body text-center">
+              <p><span class="text-center bg-success text-white rounded py-2 px-3">{{ salesD.Offer }}</span></p>
+              <span class="text-center">{{ salesD.Code }}</span>
+              <hr>
+              <div class="d-flex justify-content-center sales-dates">
+                <div class="last-seen">
+                  <p>Last Seen</p>
+                  <p>{{ salesD.DateAdded }}</p>
+                </div>
+                <div class="found-on">
+                  <p>Found on</p>
+                  <p>{{ salesD.DateUpdated }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Sales and Clearance Section End -->
   <!-- ======= Deals Section ======= -->
   <section id="services" class="services deals-sec">
     <div class="container">
@@ -411,121 +290,73 @@
         <h2>Top Deals</h2>
       </div>
       <div class="row gy-5">
-        <div class="col-xl-3 col-md-4 col-12">
-          <div class="deal-item service-item">
-            <span class="deals-off-des">Save 40%</span>
-            <div class="img deals-img">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
-                class="img-fluid" alt="">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="details position-relative">
-              <div class="d-logo">
-                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+        <div class="col-xl-3 col-md-4 col-12" *ngFor="let deals of this.topDeals.deals.slice(0,8)">
+          <a href="">
+            <div class="deal-item service-item">
+              <span class="deals-off-des">Save &#36;{{deals.PriceDifference}}</span>
+              <div class="img deals-img">
+                <img src="{{deals.Image}}" class="img-fluid" alt="">
+                <i class="bi bi-heart"></i>
               </div>
-              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-            </div>
-          </div>
-        </div>
-        <!-- End Deals Item -->
-        <div class="col-xl-3 col-md-4 col-12">
-          <div class="deal-item service-item">
-            <span class="deals-off-des">Save 40%</span>
-            <div class="img deals-img">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
-                class="img-fluid" alt="">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="details position-relative">
-              <div class="d-logo">
-                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
+              <div class="details position-relative align-items-stretch">
+                <div class="d-logo">
+                  <img src="https://adscombined.com/admin/public/storage/{{deals.Logo}}" alt="">
+                </div>
+                <p class="deal-p-price my-2"><span>{{deals.Price1}}</span><span>{{deals.Price2}}</span></p>
+                <h5 class="text-limit-2">{{deals.Title}}</h5>
               </div>
-              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
             </div>
-          </div>
-        </div>
-        <!-- End Deals Item -->
-        <div class="col-xl-3 col-md-4 col-12">
-          <div class="deal-item service-item">
-            <span class="deals-off-des">Save 40%</span>
-            <div class="img deals-img">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
-                class="img-fluid" alt="">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="details position-relative">
-              <div class="d-logo">
-                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-              </div>
-              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-            </div>
-          </div>
-        </div>
-        <!-- End Deals Item -->
-        <div class="col-xl-3 col-md-4 col-12">
-          <div class="deal-item service-item">
-            <span class="deals-off-des">Save 40%</span>
-            <div class="img deals-img">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
-                class="img-fluid" alt="">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="details position-relative">
-              <div class="d-logo">
-                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-              </div>
-              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-            </div>
-          </div>
-        </div>
-        <!-- End Deals Item -->
-        <div class="col-xl-3 col-md-4 col-12">
-          <div class="deal-item service-item">
-            <span class="deals-off-des">Save 40%</span>
-            <div class="img deals-img">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
-                class="img-fluid" alt="">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="details position-relative">
-              <div class="d-logo">
-                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-              </div>
-              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-            </div>
-          </div>
-        </div>
-        <!-- End Deals Item -->
-        <div class="col-xl-3 col-md-4 col-12">
-          <div class="deal-item service-item">
-            <span class="deals-off-des">Save 40%</span>
-            <div class="img deals-img">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0065/2319/1414/products/sc016-001.front_9707b7f6-e454-4df9-a05a-c406b4c7fbc8_1000x.jpg"
-                class="img-fluid" alt="">
-              <i class="bi bi-heart"></i>
-            </div>
-            <div class="details position-relative">
-              <div class="d-logo">
-                <img src="https://www.bagtheprice.com/logos/fossil.png" alt="">
-              </div>
-              <p class="deal-p-price my-2"><span>$555</span><span>$300</span></p>
-              <h5>Casainc Oil-rubbed Bronze 1-handle Freestanding..</h5>
-            </div>
-          </div>
+          </a>
         </div>
         <!-- End Deals Item -->
       </div>
     </div>
   </section><!-- End Deals Section -->
+  <!-- Subscription section start -->
+  <section class="subc-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-7">
+          <h2>Never Miss Offers!!!</h2>
+          <p>Subscribe using your email for up to the minute offers, coupon, promo, free shipping, clearance, weekly ad, today's ad, sale, event, gift, student, referral, reward, cash back, rebate, printable coupon, seasonal, bogo,  and deals.</p>
+          <br>
+          <p>Login to Update your Subscription</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-5 subc-form">
+          
+          
+          
+          <form #subForm="ngForm" (ngSubmit)="getSubDetails(subForm.value)">
+              <div class="form-group mb-2">
+                <input ngModel name="email" type="email" class="form-control" placeholder="Enter Your Email">
+              </div>
+              <div class="form-group mb-2">
+                <label for="">Alert Frequency</label>
+                <select name="frequency" ngModel class="form-select" aria-label="Default select example">
+                  <option selected>Daily</option>
+                  <option value="weekly">Weekly</option>
+                </select>
+              </div>
+              <div class="form-group mb-2">
+                <label for="">Alert Preference</label>
+                <select name="alert_preference" ngModel class="form-select" aria-label="Default select example">
+                  <option selected>Deals</option>
+                  <option>Coupons</option>
+                </select>
+              </div>
+              <div *ngIf="successMessage" class="alert alert-success">
+                {{ successMessage }}
+              </div>
+              <div *ngIf="warnMessage" class="alert alert-warning">
+                {{ warnMessage }}
+              </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Subscription section End -->
+
 </main><!-- End #main -->

@@ -11,9 +11,9 @@
         <ul>
           <li><a class="nav-link " routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
           <li><a class="nav-link " routerLink="stores" routerLinkActive="active">Stores</a></li>
-          <li><a class="nav-link " href="retailers" routerLinkActive="active">Retailers</a></li>
-          <li><a class="nav-link " href="#">Brands</a></li>
-          <li><a class="nav-link " href="#">Deals</a></li>
+          <li><a class="nav-link " routerLink="retailers" routerLinkActive="active">Retailers</a></li>
+          <li><a class="nav-link " routerLink="brands" routerLinkActive="active">Brands</a></li>
+          <li><a class="nav-link " routerLink="deals" routerLinkActive="active">Deals</a></li>
           <li class="dropdown megamenu"><a href="#"><span>Coupons</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
             <li>
@@ -57,3 +57,26 @@
 </div>
 </header>
 <!-- End Header -->
+<section id="hero-static" class="hero-static d-flex align-items-center">
+  <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative">
+    <h2>Find Top <span>Promotions</span></h2>
+    <div class="input-group mb-3 input-group-sm f-search">
+      <select class=" border-0 bg-primary text-white rounded-pill-start mw-max-c f-search-select" id="" size=""
+        style="    padding: .25rem .5rem; font-size: .875rem; border-radius: .25rem 0 0 .25rem;">
+        <option selected>Deals</option>
+        <option value="1">Coupons</option>
+      </select>
+      <input type="search" class="form-control hide-focus border-primary border-2 border-end-0 f-search-input"
+        placeholder="search doupons or deals" aria-label="Username" aria-describedby="basic-addon1">
+      <button class="f-search-icon bg-primary border-primary btn ">
+        <span class=" border-2 border-start-0 ps-1" id="basic-addon1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--bs-white)" stroke="var(--bs-white)"
+            class="bi bi-search" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>

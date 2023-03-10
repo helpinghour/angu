@@ -137,7 +137,6 @@ section {
   padding: 15px 0;
   background: rgba(var(--color-secondary-rgb), 0.05);
   min-height: 40px;
-  margin-top: 76px;
 }
 
 .breadcrumbs h2 {
@@ -3338,6 +3337,7 @@ section {
 }
 .f-events p{
   font-size: 13px;
+  margin-bottom: 0;
 }
 .f-search{
   height: 60px;
@@ -3443,6 +3443,10 @@ section {
 
 .aqua-gradient {
   background: linear-gradient(40deg, var(--bs-gray-900), var(--bs-gray-900)) !important;
+  position: relative;
+}
+.sales-card .aqua-gradient{
+  background: linear-gradient(40deg, var(--bs-primary), var(--bs-purple)) !important;
   position: relative;
 }
 .coupon-card h5{
@@ -3551,11 +3555,11 @@ section {
   background-color: lavender;
 }
 .bogo-card .avatar {
-    width: 80px;
+    width: 65px;
     margin-top: -40px;
     overflow: hidden;
-    border: 2px solid #fff;
-    border-radius: 50%;
+    border: 2px solid #055160;
+    border-radius: 10%;
     z-index: 1;
 }
 .bogo-card .card-up {
@@ -3564,6 +3568,15 @@ section {
     overflow: hidden;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
+}
+.bogo-card p{
+  margin: 0;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .bogo-card h5 {
     color: #ffffff;
@@ -3580,9 +3593,9 @@ section {
 /*BOGO section / */
 
 /*Deals sec*/
-.deals-sec{
+/* .deals-sec{
 
-}
+} */
 .deals-sec .details {
     padding: 35px 10px 10px;
     margin: -100px 15px 0 15px;
@@ -3615,6 +3628,7 @@ section {
 }
 .deal-item h5{
   font-size: 17px;
+  color: var(--bs-gray-dark);
 }
 .deals-sec .details .d-logo img{
   max-width: 100%;
@@ -3623,7 +3637,7 @@ section {
 .deal-p-price span{
   font-size: 25px;
     font-weight: 700;
-    color: forestgreen;
+    color: var(--bs-green);
 }
 .deal-p-price span:first-child{
   font-size: 16px;
@@ -3642,6 +3656,9 @@ section {
     border: 1px solid #adb5bd;
     position: relative;
 }
+.deals-img img{
+  height: 300px;
+}
 .deals-img i{
   position: absolute;
     color: red;
@@ -3654,8 +3671,91 @@ position: absolute;
     z-index: 2;
     top: 1px;
     right: 1px;
-    background-color: #95ff99;
+    background-color: #9fffab;
+    color: var(--bs-red);
     padding: 2px 15px;
     border-radius: 0 8px; 
 }
 /*Deals sec / */
+/* Sales */
+
+.sales-card{
+  cursor: pointer;
+}
+.sales-head h2:before {
+  background-color: #111;
+}
+.sales-head h2:after {
+  background-color: #333;
+}
+.sales-card .card-up {
+  height: 130px;
+  overflow: hidden;
+  padding: 5px;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+.sales-card .card-up h5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #ffffff;
+}
+.sales-card .bi {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #fff;
+}
+.sales-card .avatar {
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+.sales-card .avatar img{
+  object-fit: contain;
+    height: 100px;
+    width: 100px;
+    background: #ffffff;
+}
+
+.sales-dates .found-on>p:first-child, .sales-dates .last-seen>p:first-child {
+  font-weight: bold;
+}
+.sales-dates .last-seen>p {
+  margin: 0;
+  font-size: 15px;
+  text-align: left;
+  margin-right: 4px;
+  margin-left: 4px;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+}
+.sales-dates .found-on>p {
+  margin: 0;
+  font-size: 15px;
+  text-align: right;
+  margin-right: 4px;
+  margin-left: 4px;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+/* Sales */
+
+/* subscribe */
+.subc-sec{
+  background: var(--bs-gray-200);
+}
+.subc-form{
+  background: var(--bs-white);
+    padding: 1.5em;
+}
