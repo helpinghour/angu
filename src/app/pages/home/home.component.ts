@@ -10,6 +10,10 @@ import { SubscribeService } from 'src/app/services/subscribe.service'
 export class HomeComponent {
   allCounts: any;
   total_coupons: any;
+  total_deals: any;
+  total_stores: any;
+  total_brands: any;
+  total_retailers: any;
   homeCoupon: any;
   homeCashback: any;
   boGo: any;
@@ -36,24 +40,29 @@ export class HomeComponent {
   ngOnInit(){
     this.allCount.getAllCounts().subscribe( (counts:any) =>{ //counts is a any type that will get data response from service
       this.allCounts = counts;
+      this.total_coupons = counts.total_coupons;
+      this.total_deals = counts.total_deals;
+      this.total_stores = counts.total_stores;
+      this.total_brands = counts.total_brands;
+      this.total_retailers = counts.total_retailers;
     });
     this.homeCoupons.getHomeCoupon().subscribe( (coup:any) =>{ //getHomeCoupon is method in service
-      this.homeCoupon = coup;
+      this.homeCoupon = coup.coupons.slice(0, 4);
     });
     this.cashBack.getHomeCashback().subscribe( (cashb:any) =>{
-      this.homeCashback = cashb;
+      this.homeCashback = cashb.coupons;
     });
     this.bogo.getBogo().subscribe( (bogo:any) =>{
-      this.boGo = bogo;
+      this.boGo = bogo.coupons.slice(0,6);
     });
     this.events.getEvents().subscribe( (events:any) =>{
-      this.eventsData = events;
+      this.eventsData = events.coupons.slice(0,6);
     })
     this.sales.getSales().subscribe( (sales:any) =>{
-      this.salesData = sales;
+      this.salesData = sales.coupons;
     })
     this.deals.getTopDeals().subscribe( (deals:any) =>{
-      this.topDeals = deals;
+      this.topDeals = deals.deals.slice(0,8);
     })
     
   }

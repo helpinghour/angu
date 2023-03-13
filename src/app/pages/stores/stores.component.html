@@ -14,10 +14,41 @@
   </div><!-- End Breadcrumbs -->
 
   <section class="inner-page">
-    <div class="container" >
-
+    <div class="container">
       <div class="section-header">
         <h2>Store's Best Deals and Coupons</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 p-2">
+          <h3>All Stores(6122)</h3>
+
+          <div class="row stores-div card-deck d-flex flex-wrap align-items-stretch">
+
+            <div class="col-sm-6 col-md-4 col-lg-3 col-6 mt-4 flex-fill" *ngFor="let stores of this.storesData">
+              <div class="card h-100">
+                <div >
+                  <img class="card-img-top" src="https://adscombined.com/admin/public/storage/{{stores.Image}}"
+                    alt="{{stores.Image}}" height="160">
+                </div>
+                <div class="card-body store-detail text-center">
+                  <h5 class="card-title " title="{{stores.StoreName}}">{{stores.StoreName}}</h5>
+                  <p class="card-text " title="{{stores.TotalCouponsCount}} and {{stores.DealsCount}}">{{stores.TotalCouponsCount}} Coupons and {{stores.DealsCount}} Deals</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h3 class="sidebar-title">Top Categories</h3>
+          <div class="tags">
+            <ul class="mt-3">
+              <li *ngFor="let cat of this.allCategories">
+                <a href="#">{{cat.Category}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>

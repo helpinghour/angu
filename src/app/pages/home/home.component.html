@@ -2,10 +2,12 @@
 <main id="main">
 
   <div class="container">
-    <h2 class="text-center"><a href="/coupons/all">{{allCounts.total_coupons}} Coupons</a> & <a
-        href="/deals">{{allCounts.total_deals}} Deals</a> from <a href="/onlinestores">{{allCounts.total_stores}} Online
-        Stores</a> , <a href="/onlinebrands">{{allCounts.total_brands}} Brands</a> & <a
-        href="/onlineretailers">{{allCounts.total_retailers}} Retailers</a></h2>
+    
+    <h2 class="text-center"><a href="/coupons/all">{{this.total_coupons}} Coupons</a> & <a
+        href="/deals">{{this.total_deals}} Deals</a> from <a href="/onlinestores">{{this.total_stores}} Online
+        Stores</a> , <a href="/onlinebrands">{{this.total_brands}} Brands</a> & <a
+        href="/onlineretailers">{{this.total_retailers}} Retailers</a></h2>
+
     <div class="row">
       <div class="img-responsive col-md-12">
         <img class="img-responsive" src="https://blogs-images.forbes.com/gabrielshaoolian/files/2017/07/quickbooks.png"
@@ -119,7 +121,7 @@
 
       <div class="row">
         <!-- <div class="col-lg-3 col-md-6" *ngFor = "let coupVal of this.homeCoupon"> -->
-        <div class="col-lg-3 col-md-6" *ngFor="let coupVal of this.homeCoupon.coupons.slice(0, 4)">
+        <div class="col-lg-3 col-md-6" *ngFor="let coupVal of this.homeCoupon">
           <div class="card coupon-card mt-2 mb-3">
             <div class="card-up aqua-gradient">
               <h5 class="text-center my-2">{{ coupVal.Title }}</h5>
@@ -159,7 +161,7 @@
         <h2>Cash <span>Back</span></h2>
       </div>
       <div class="row d-flex align-items-stretch mt-4">
-        <div class="col-lg-3 col-md-6 col-12" *ngFor="let cashback of this.homeCashback.coupons">
+        <div class="col-lg-3 col-md-6 col-12" *ngFor="let cashback of this.homeCashback">
           <div class="card p-3 mb-2">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
@@ -186,7 +188,7 @@
         <h2>Get One Free (BOGO)</h2>
       </div>
       <div class="row">
-        <div class="col-lg-2 col-md-6 col-12 align-items-stretch" *ngFor="let bogo of this.boGo.coupons.slice(0,6)">
+        <div class="col-lg-2 col-md-6 col-12 align-items-stretch" *ngFor="let bogo of this.boGo">
           <div class="card bogo-card mt-2 mb-3">
             <div class="card-up bogo-card-head">
               <h5 class="text-center my-2">{{bogo.Offer}}</h5>
@@ -215,7 +217,7 @@
         <h2>Events</h2>
       </div>
       <div class="row d-flex align-items-stretch mt-4">
-        <div class="col-lg-2 col-md-4 col-12" *ngFor="let event of this.eventsData.coupons.slice(0,6)">
+        <div class="col-lg-2 col-md-4 col-12" *ngFor="let event of this.eventsData">
           <div class="card p-3 mb-2">
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
@@ -251,7 +253,7 @@
 
       <div class="row">
         <!-- <div class="col-lg-3 col-md-6" *ngFor = "let coupVal of this.homeCoupon"> -->
-        <div class="col-lg-3 col-md-6" *ngFor="let salesD of this.salesData.coupons">
+        <div class="col-lg-3 col-md-6" *ngFor="let salesD of this.salesData">
           <div class="card coupon-card sales-card mt-2 mb-3">
             <div class="card-up aqua-gradient">
               <h5 class="text-center my-2">{{ salesD.Title }}</h5>
@@ -290,7 +292,7 @@
         <h2>Top Deals</h2>
       </div>
       <div class="row gy-5">
-        <div class="col-xl-3 col-md-4 col-12" *ngFor="let deals of this.topDeals.deals.slice(0,8)">
+        <div class="col-xl-3 col-md-4 col-12" *ngFor="let deals of this.topDeals">
           <a href="">
             <div class="deal-item service-item">
               <span class="deals-off-des">Save &#36;{{deals.PriceDifference}}</span>

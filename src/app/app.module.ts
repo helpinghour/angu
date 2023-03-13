@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { StoresComponent } from './pages/stores/stores.component';
 import { RetailersComponent } from './pages/retailers/retailers.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { DealsComponent } from './pages/deals/deals.component';
@@ -23,6 +24,7 @@ import { DealsComponent } from './pages/deals/deals.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    StoresComponent,
     RetailersComponent,
     BrandsComponent,
     DealsComponent,

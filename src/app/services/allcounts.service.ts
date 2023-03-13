@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
+
 export class AllcountsService {
 
   private allCountUrl = "https://adscombined.com/v1/public/api/AllCounts";
