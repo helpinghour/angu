@@ -8,22 +8,41 @@ import { StoresService } from 'src/app/services/stores.service';
   styleUrls: ['./stores.component.css']
 })
 
-
-
 export class StoresComponent {
   storesData:any;
   allCategories:any;
+  totalStores:any;
+  stores:any;
+  currentPage = 1;
+  perPage = 60;
+  
 
-  constructor ( private stores:StoresService, private categories:StoresService ){
+  constructor ( private storeCount:StoresService, private categories:StoresService, private storePagi: StoresService ){
 
-    this.stores.storesInfo().subscribe( (response:any) => {
+    this.storeCount.storesInfo().subscribe( (response:any) => {  
+      this.totalStores = response.total_stores;
+    })
+    this.categories.allCategories().subscribe( (response:any) => {
+      this.allCategories = response.categories;
+    })
+  }
+  ngOnInit(): void {
+    this.getStores();
+  }
+  getStores(): void {
+    this.storePagi.getStores(this.currentPage - 1, this.perPage).subscribe(response => {
       this.storesData = response.stores;
-    })
-    this.categories.allCategories().subscribe( (data:any) => {
-      this.allCategories = data.categories;
-      console.log(this.allCategories);
-    })
-
+    });
+  }
+  goToPreviousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.getStores();
+    }
+  }
+  goToNextPage(): void {
+    this.currentPage++;
+    this.getStores();
   }
 
 }

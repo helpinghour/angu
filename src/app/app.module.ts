@@ -30,7 +30,7 @@ import { DealsComponent } from './pages/deals/deals.component';
     DealsComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
