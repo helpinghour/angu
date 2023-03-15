@@ -13,27 +13,21 @@ export class StoresService {
   allCategor = "https://adscombined.com/v1/public/api/AllCategories";
   apiUrl = 'https://adscombined.com/v1/public/api/AllStores';
   
-  constructor( private stores: HttpClient, private catgor: HttpClient, private http: HttpClient) { }
+  constructor( private catgor: HttpClient, private http: HttpClient) { }
   
   
-  storesInfo(){ 
-     return this.stores.get(this.storeUrlIs);
-  }
   allCategories(){
     return this.catgor.get(this.allCategor);
   }
-
-  getStores(page: number, perPage: number): Observable<any> {
+  
+  getAllStores(page: number, perPage: number): Observable<any>{
     const params = {
       Type: 'Store',
       Page: page.toString(),
       PerPage: perPage.toString(),
       Filter: ''
-    };
-    console.log(params);
-    return this.http.get<any>(this.apiUrl, { params });
+    }
+    return this.http.get(this.apiUrl, {params} );
   }
-
-
 
 }

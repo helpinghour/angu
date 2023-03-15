@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { response } from 'express';
 import { StoresService } from 'src/app/services/stores.service';
 
 
@@ -9,40 +10,44 @@ import { StoresService } from 'src/app/services/stores.service';
 })
 
 export class StoresComponent {
-  storesData:any;
   allCategories:any;
   totalStores:any;
-  stores:any;
-  currentPage = 1;
-  perPage = 60;
+  storesData:any;
   
+  page: number = 0;
+  perPage: number = 60;
+  allNumericeStart: any;
+  filterIt: any;
 
-  constructor ( private storeCount:StoresService, private categories:StoresService, private storePagi: StoresService ){
-
-    this.storeCount.storesInfo().subscribe( (response:any) => {  
-      this.totalStores = response.total_stores;
-    })
+  constructor ( private categories:StoresService, private httpData:StoresService ){
+    
     this.categories.allCategories().subscribe( (response:any) => {
       this.allCategories = response.categories;
-    })
-  }
-  ngOnInit(): void {
-    this.getStores();
-  }
-  getStores(): void {
-    this.storePagi.getStores(this.currentPage - 1, this.perPage).subscribe(response => {
-      this.storesData = response.stores;
-    });
-  }
-  goToPreviousPage(): void {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.getStores();
-    }
-  }
-  goToNextPage(): void {
-    this.currentPage++;
-    this.getStores();
+    })   
+  
   }
 
+    ngOnInit(): void{
+      this.getStores();
+    }
+    
+    getStores(): void{
+        this.httpData.getAllStores(this.page, this.perPage).subscribe( (response:any) =>{
+        this.totalStores = response.total_stores;
+        this.storesData = response.stores;
+      })
+    }
+
+    onStorePageChange(event: any){
+      this.page = event;
+      this.getStores();
+    }
+    
+    getNumeric(event: any){
+      this.filterIt = event.target.textContent;
+      this.httpData.getAllStores(this.page, this.perPage).subscribe( (response:any) =>{
+        this.allNumericeStart = response.stores;
+      })
+    }
+    
 }

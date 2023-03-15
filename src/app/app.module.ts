@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { HeaderComponent } from './include/header/header.component';
 import { FooterComponent } from './include/footer/footer.component';
@@ -17,6 +18,7 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { RetailersComponent } from './pages/retailers/retailers.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { DealsComponent } from './pages/deals/deals.component';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { DealsComponent } from './pages/deals/deals.component';
     BrowserModule,
     CommonModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3789,3 +3789,21 @@ position: absolute;
   display: flex;
   align-items: center;
 }
+
+.my-pagination .ngx-pagination li{
+  display: inline-block;
+  padding: 6px;
+  border: 1px solid;
+  margin-right: 4px;
+}
+.ngx-pagination .small-screen {
+  display: none !important;
+}
+.my-pagination .ngx-pagination .current {
+  display: inline-block;
+  padding: .637rem 0.925rem;
+  border-radius: 0;
+  border: 1px solid;
+  margin-right: 4px;
+  background: var(--color-purple);
+}

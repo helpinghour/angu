@@ -15,43 +15,58 @@
 
   <section class="inner-page">
     <div class="container">
-      
+
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-12">
-            <h2>Store's Best Deals and Coupons</h2>
-            <h4>All Stores({{this.totalStores}})</h4>
+          <h2>Store's Best Deals and Coupons</h2>
+          <h4>All Stores({{totalStores}})</h4>
           <div class="row stores-div card-deck d-flex flex-wrap align-items-stretch">
 
-            <div class="col-sm-6 col-md-4 col-lg-3 col-6 mb-4 flex-fill" *ngFor="let stores of this.storesData">
+            <div class="col-12">
+              <div class="tags">
+                <ul class="mt-3">
+                  <li>
+                    <a >All</a>
+                    <a (click)="getNumeric($event)">0-9</a>
+                    
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 col-6 mb-4" *ngFor="let stores of storesData | paginate:{
+              itemsPerPage: perPage,
+              currentPage: page,
+              totalItems: totalStores
+            }; let i=index ">
+
               <div class="card h-100">
-                <div >
+                <div>
                   <img class="card-img-top" src="https://adscombined.com/admin/public/storage/{{stores.Image}}"
                     alt="{{stores.Image}}" height="160">
                 </div>
                 <div class="card-body store-detail text-center">
                   <h5 class="card-title " title="{{stores.StoreName}}">{{stores.StoreName}}</h5>
-                  <p class="card-text " title="{{stores.TotalCouponsCount}} coupons and {{stores.DealsCount}} deals">{{stores.TotalCouponsCount}} Coupons and {{stores.DealsCount}} Deals</p>
+                  <p class="card-text " title="{{stores.TotalCouponsCount}} coupons and {{stores.DealsCount}} deals">
+                    {{stores.TotalCouponsCount}} Coupons and {{stores.DealsCount}} Deals</p>
                 </div>
               </div>
             </div>
           </div>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" (click)="goToPreviousPage()" tabindex="-1" aria-disabled="true">Prev Page</a>
-              </li>
-              <li class="page-item"><a class="page-link">{{currentPage}}</a></li>
-              <li class="page-item">
-                <a class="page-link" (click)="goToNextPage()">Next Page</a>
-              </li>
-            </ul>
-          </nav>
+            <div class="my-pagination">
+              <pagination-controls
+              previousLabel="Prev"
+              nextLabel="Next"
+              (pageChange)="onStorePageChange($event)">
+              </pagination-controls>
+            </div>
+          
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
           <h3 class="sidebar-title">Top Categories</h3>
           <div class="tags">
             <ul class="mt-3">
-              <li *ngFor="let cat of this.allCategories">
+              <li *ngFor="let cat of allCategories">
                 <a href="">{{cat.Category}}</a>
               </li>
             </ul>
