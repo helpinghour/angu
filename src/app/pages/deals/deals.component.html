@@ -1,24 +1,93 @@
 <main id="main">
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs">
-      <div class="container">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <ol>
-            <li><a routerLink="/">Home</a></li>
-            <li>Inner Page</li>
-          </ol>
+      <div class="d-flex justify-content-between align-items-center">
+        <ol>
+          <li><a routerLink="/">Home</a></li>
+          <li>Deals</li>
+        </ol>
+      </div>
+
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <section class="inner-page">
+    <div class="container">
+      <form class="bg-light p-3">
+        <div class="row">
+          <label for="ByKeyword:" class="col-sm-2 mt-2 col-form-label">By Keyword:</label>
+          <div class="col-sm-4 mt-2">
+            <input type="text" class="form-control" id="ByKeyword:">
+          </div>
+          <label for="storeBrand" class="col-sm-2 mt-2 col-form-label">By Store or Brand:</label>
+          <div class="col-sm-4 mt-2">
+            <input type="text" class="form-control" id="storeBrand">
+          </div>
+          <label for="PriceFrom" class="col-sm-2 mt-2 col-form-label">Price Range:</label>
+          <div class="col-sm-2 mt-2">
+            <input type="number" class="form-control" id="PriceFrom">
+          </div>
+          <label for="inputEmail3" class="col-sm-2 mt-2 col-form-label">Price To:</label>
+          <div class="col-sm-2 mt-2">
+            <input type="number" class="form-control" id="inputEmail3">
+          </div>
+          <div class="col-sm-4 mt-2">
+            <button type="submit" class="btn btn-primary">Filter</button>
+          </div>
+
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-12 p-4">
+          <h2>Top Deals</h2>
+          <h4>Found ({{totalDeals}}) Deals</h4>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <!-- ======= Deals Section ======= -->
+          <div id="services" class="services deals-sec">
+            <div class="row gy-5">
+              <div class="col-xl-4 col-md-6 col-12" *ngFor="let deals of this.allDealsData | paginate:{
+                  itemsPerPage: perPage,
+                  currentPage: page,
+                  totalItems: totalDeals
+                }; let i = index ">
+
+                <a href="">
+                  <div class="deal-item service-item">
+                    <span class="deals-off-des">Save &#36;{{deals.PriceDifference}}</span>
+                    <div class="img deals-img">
+                      <img src="{{deals.Image}}" class="img-fluid" alt="">
+                      <i class="bi bi-heart"></i>
+                    </div>
+                    <div class="details position-relative align-items-stretch">
+                      <div class="d-logo">
+                        <img src="https://adscombined.com/admin/public/storage/{{deals.Logo}}" alt="">
+                      </div>
+                      <p class="deal-p-price my-2"><span>{{deals.Price1}}</span><span>{{deals.Price2}}</span></p>
+                      <h5 class="text-limit-2">{{deals.Title}}</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- End Deals Item -->
+            </div>
+            <div class="my-pagination mt-4">
+              <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onDealsPageChange($event)">
+              </pagination-controls>
+            </div>
+
+          </div>
+          <!-- End Deals Section -->
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <img src="https://www.shoppingsuperstars.com/image/ads.png" alt="ads" class="sidebar-ads">
         </div>
 
       </div>
-    </div><!-- End Breadcrumbs -->
 
-    <section class="inner-page">
-      <div class="container" >
-
-        <div class="section-header">
-          <h2>Inner Page</h2>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 </main>

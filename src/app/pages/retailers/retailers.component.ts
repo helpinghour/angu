@@ -18,9 +18,9 @@ export class RetailersComponent {
 
   constructor( private retailData: RetailersService, private retailsCat:RetailersService, private retailersData: RetailersService){
 
-    this.retailData.allRetails().subscribe( (data:any) =>{
-      this.allRetailData = data.stores;
-      this.storesCount = data.total_stores;
+    this.retailData.allRetails().subscribe( (response:any) =>{
+      this.allRetailData = response.stores;
+      this.storesCount = response.total_stores;
     })
     this.retailsCat.allCat().subscribe( (response:any) =>{
       this.allRetailCat = response.categories;

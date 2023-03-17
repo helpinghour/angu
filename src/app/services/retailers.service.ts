@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RetailersService {
-  allCatURL = "https://adscombined.com/v1/public/api/AllCategories";
+  allCats = "https://adscombined.com/v1/public/api/AllCategories";
   allRetailers = "https://adscombined.com/v1/public/api/AllStores?Type=Retailer&Page=0&PerPage=60&Filter=";
   apiUrl = "https://adscombined.com/v1/public/api/AllStores";
 
   constructor( private allRetail: HttpClient, private retailerData: HttpClient, private http:HttpClient ) { }
 
   allCat(){
-    return this.retailerData.get(this.allCatURL);
+    return this.retailerData.get(this.allCats);
   }
   
   allRetails(){

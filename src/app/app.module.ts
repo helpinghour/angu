@@ -18,7 +18,8 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { RetailersComponent } from './pages/retailers/retailers.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { DealsComponent } from './pages/deals/deals.component';
-
+import { CouponsComponent } from './pages/coupons/coupons.component';
+import { AllcategoriesComponent } from './pages/allcategories/allcategories.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { DealsComponent } from './pages/deals/deals.component';
     RetailersComponent,
     BrandsComponent,
     DealsComponent,
+    CouponsComponent,
+    AllcategoriesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
