@@ -8,15 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class CouponsService {
 
-  couponsAPI = "https://adscombined.com/v1/public/api/FilterCoupons?Filter=all&SubType=&Page=0&PerPage=60";
   allCoupns = "https://adscombined.com/v1/public/api/FilterCoupons";
 
-  constructor( private coup: HttpClient, private allCoupons: HttpClient) { }
-
-  allCoup(){
-    return this.coup.post( this.couponsAPI, {});
-  }
-
+  constructor( private allCoupons: HttpClient) { }
 
   getAllCoup( page: number ): Observable<any>{
     this.allCoupns = "https://adscombined.com/v1/public/api/FilterCoupons?Filter=all&SubType=&Page="+page+"&PerPage=60";

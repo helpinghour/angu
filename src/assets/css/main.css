@@ -431,7 +431,7 @@ section {
 
   .navbar .megamenu ul li a,
   .navbar .megamenu ul li:hover>a {
-    color: rgba(var(--color-white-rgb), 0.5);
+    color: rgba(var(--color-white-rgb));
     background: none;
   }
 
@@ -3876,4 +3876,19 @@ position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@media (min-width: 1025px){
+.navbar .megamenu .tags li a{
+  display: inline;
+  border: 1px solid;
+  margin-right: 10px;
+}
+.navbar .megamenu .tags{
+  padding: 20px 15px;
+}
+/* .navbar .dropdown .dropdown:hover>ul{
+  inset: 0px 0px auto auto;
+    margin: 0px;
+    transform: translate(-200px, 0px);
+} */
 }
