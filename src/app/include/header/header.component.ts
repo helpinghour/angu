@@ -12,7 +12,7 @@ export class HeaderComponent {
   constructor( private getCoup: HeaderService){
     this.getCoup.getCoupData().subscribe( (data:any) =>{
       this.affCoupns = data;   
-      console.log(this.affCoupns);
+      // console.log(this.affCoupns);
     })
   }
 }

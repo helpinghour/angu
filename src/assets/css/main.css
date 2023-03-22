@@ -387,7 +387,8 @@ section {
   }
 
   .navbar .dropdown ul li {
-    min-width: 200px;
+    min-width: 250px;
+    max-width: 260px;
   }
 
   .navbar .dropdown ul a {
@@ -3443,7 +3444,7 @@ section {
 }
 
 .aqua-gradient {
-  background: linear-gradient(40deg, var(--bs-gray-900), var(--bs-gray-900)) !important;
+  background: linear-gradient(40deg, var(--bs-black), var(--color-default)) !important;
   position: relative;
 }
 .sales-card .aqua-gradient{

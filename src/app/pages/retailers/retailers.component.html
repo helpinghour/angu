@@ -27,7 +27,8 @@
                 <ul class="mt-3">
                   <li>
                     <a>All</a>
-                    <!-- <a (click)="getNumeric($event)">0-9</a> -->
+                    <a>0-9</a>
+                    <a *ngFor="let letter of alphabet">{{letter | uppercase}}</a>
 
                   </li>
                 </ul>

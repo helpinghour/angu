@@ -15,6 +15,7 @@ export class RetailersComponent {
 
   page: number = 0;
   perPage: number = 60;
+  alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
   constructor( private retailData: RetailersService, private retailsCat:RetailersService, private retailersData: RetailersService){
 
