@@ -414,6 +414,7 @@ section {
   .navbar .dropdown:hover>ul {
     opacity: 1;
     visibility: visible;
+    width: min-content;
   }
 
   .navbar .megamenu {

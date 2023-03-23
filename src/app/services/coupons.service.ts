@@ -12,8 +12,9 @@ export class CouponsService {
 
   constructor( private allCoupons: HttpClient) { }
 
-  getAllCoup( page: number ): Observable<any>{
-    this.allCoupns = "https://adscombined.com/v1/public/api/FilterCoupons?Filter=all&SubType=&Page="+page+"&PerPage=60";
+  getAllCoup( currentPage: number, filter: any ): Observable<any>{
+
+    this.allCoupns = "https://adscombined.com/v1/public/api/FilterCoupons?Filter="+filter+"&SubType=&Page="+currentPage+"&PerPage=60";
     return this.allCoupons.post( this.allCoupns, {} );
     
   }

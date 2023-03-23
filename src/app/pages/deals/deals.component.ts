@@ -12,7 +12,7 @@ export class DealsComponent {
   totalDeals: any;
   allDealsAre: any;
 
-  page: number = 0;
+  currentPage = 0;
   perPage: number = 60;
 
   constructor( private deals:DealsService, private allDeals:DealsService){ }
@@ -22,7 +22,7 @@ export class DealsComponent {
   }
 
   getDeals(): void{
-    this.allDeals.getAllDealStore(this.page, this.perPage).subscribe( (response:any) =>{
+    this.allDeals.getAllDealStore(this.currentPage, this.perPage).subscribe( (response:any) =>{
       
       this.allDealsData = response.deals;
       this.totalDeals = response.total_deals;
@@ -33,7 +33,7 @@ export class DealsComponent {
     })
   }
   onDealsPageChange(event: any){
-    this.page = event;
+    this.currentPage = event - 1;
     this.getDeals();
   }
 

@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 
 export class StoresService {
 
-  storeUrlIs = "https://adscombined.com/v1/public/api/AllStores?Type=Store&Page=0&PerPage=60&Filter=";
   allCategor = "https://adscombined.com/v1/public/api/AllCategories";
   apiUrl = 'https://adscombined.com/v1/public/api/AllStores';
   
@@ -20,12 +19,14 @@ export class StoresService {
     return this.catgor.get(this.allCategor);
   }
   
-  getAllStores(currentPage: number, perPage: number, filter:any): Observable<any>{
+  getAllStores(currentPage: number, perPage: number, filter:any, pCat:any, sCat:any ): Observable<any>{
     const params = {
       Type: 'Store',
       Page: currentPage.toString(),
       PerPage: perPage.toString(),
-      Filter: filter.toString()
+      Filter: filter.toString(),
+      Category: pCat,
+      SubCategory: sCat
     }
     return this.http.get(this.apiUrl, {params} );
   }

@@ -26,11 +26,13 @@
               <div class="tags">
                 <ul class="mt-3">
                   <li>
-                    <a>All</a>
+                    <a (click)="getAllBrands()">All</a>
                     <a (click)="getNumeric('0-9')">0-9</a>
-                    <!-- <a (click)="getNumeric($event)">0-9</a> -->
-
-                  </li>
+                    <li *ngFor="let letter of alphabet">
+                      <a (click)="getAlpha(letter)" >
+                        {{letter | uppercase}}
+                      </a>
+                    </li>
                 </ul>
               </div>
             </div>

@@ -33,7 +33,7 @@ export class BrandsComponent {
   }
 
   getBrands(): void{
-      this.allBrandData.getAllBrands( this.currentPage, this.perPage ).subscribe( (response:any) => {
+      this.allBrandData.getAllBrands( this.currentPage, this.perPage, this.filter ).subscribe( (response:any) => {
       this.allBrandsData = response.stores;
       this.brandsCount = response.total_stores;
       this.allBrandsAre = response.stores;
@@ -41,11 +41,18 @@ export class BrandsComponent {
   }
 
   getNumeric(filter: any){ //for numeric filters
+    this.filter = filter;
+    this.getBrands();
+  }
+  getAllBrands(){
+    this.filter = "";
+    this.getBrands();
+  }
+  getAlpha(filter:any){
     this.currentPage = 0;
     this.filter = filter;
     this.getBrands();
   }
-
   onBrandPageChange( event: any){
     this.currentPage = event - 1;
     this.getBrands();

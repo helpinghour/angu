@@ -51,7 +51,7 @@
             <div class="row gy-5">
               <div class="col-xl-4 col-md-6 col-12" *ngFor="let deals of this.allDealsData | paginate:{
                   itemsPerPage: perPage,
-                  currentPage: page,
+                  currentPage: currentPage + 1,
                   totalItems: totalDeals
                 }; let i = index ">
 
@@ -75,7 +75,7 @@
               <!-- End Deals Item -->
             </div>
             <div class="my-pagination mt-4">
-              <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onDealsPageChange($event)">
+              <pagination-controls previousLabel="Prev" nextLabel="Next" currentPage="currentPage + 1" (pageChange)="onDealsPageChange($event)">
               </pagination-controls>
             </div>
 
