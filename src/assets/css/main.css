@@ -3338,7 +3338,7 @@ section {
   padding: 2px 5px;
   border-radius: 4px;
 }
-.f-events p{
+.f-events .event-title{
   font-size: 13px;
   margin-bottom: 0;
 }
@@ -3878,6 +3878,10 @@ position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.tags .active{
+  background-color: var(--color-primary) !important;
+  color: var(--color-white);
 }
 @media (min-width: 1025px){
 .navbar .megamenu .tags li a{

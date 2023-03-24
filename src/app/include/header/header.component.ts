@@ -7,12 +7,11 @@ import { HeaderService } from 'src/app/services/header.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  affCoupns:any;
+  searchR:any;
 
-  constructor( private getCoup: HeaderService){
-    this.getCoup.getCoupData().subscribe( (data:any) =>{
-      this.affCoupns = data;   
-      // console.log(this.affCoupns);
+  constructor( private search: HeaderService){
+    this.search.getSearchReuslts().subscribe( (data:any) =>{
+      // this.searchR = data;
     })
   }
 }

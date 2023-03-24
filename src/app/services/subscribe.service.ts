@@ -14,6 +14,7 @@ export class SubscribeService {
     
    }
    subscribeUser(data:any){
+    
     return this.subsc.post(this.subApiUrl,data);
    }
 }

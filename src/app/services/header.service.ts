@@ -6,16 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class HeaderService {
 
-  headerCoup = "https://adscombined.com/v1/public/api/FilterCoupons?Filter=all&SubType=&Page=0&PerPage=60"
   searchAPI = "https://adscombined.com/v1/public/api/SearchKeywordsList";
 
-  constructor( private coups: HttpClient ) {   }
+  constructor( private search: HttpClient ) {   }
   
-  getCoupData(){
-    return  this.coups.post( this.headerCoup, {});
-  }
   getSearchReuslts(){
-    
+    return this.search.post( this.searchAPI, {});
   }
 
 }

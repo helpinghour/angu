@@ -22,9 +22,7 @@ export class AllcategoriesComponent {
         
         if (category.sub_categories) {
           for (const subCategory of category.sub_categories) {
-            // console.log(subCategory);
             subCategory['imgName'] = this.cleanTitle(subCategory.SubCategory);
-            // console.log(this.cleanTitle(subCategory.SubCategory));
           }
         }
       }

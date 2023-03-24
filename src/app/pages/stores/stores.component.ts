@@ -14,6 +14,7 @@ export class StoresComponent {
   totalStores:any;
   storesData:any;
   allNumericeStart: any;
+  activeFilter: string = '';
   
   currentPage = 0;
   perPage: number = 60;
@@ -63,8 +64,9 @@ export class StoresComponent {
 
     filterPCat(filterPCat:any){ // to filter Parent category (Category)
       this.currentPage = 0
-      this.pCat = filterPCat;
       this.sCat = "";
+      this.filter = "";
+      this.pCat = filterPCat;
       this.getStores();
     }
 
