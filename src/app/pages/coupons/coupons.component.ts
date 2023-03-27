@@ -31,9 +31,11 @@ export class CouponsComponent {
       this.allCoupons = data.coupons;
       this.allCouponsData = data;
       this.allCounts = data.counts;
+      console.log(this.allCounts);
 
     })
   }
+
   sliceData(key:any){
     this.sliceKey = key.slice(0, -5);
     let str = this.sliceKey;

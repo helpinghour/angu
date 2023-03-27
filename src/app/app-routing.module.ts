@@ -35,7 +35,7 @@ const routes: Routes = [
     component: CouponsComponent
   },
   {
-    path: 'filtercoupons',
+    path: 'filtercoupons/:catgoryFilter',
     component: FiltercouponsComponent
   },
   {

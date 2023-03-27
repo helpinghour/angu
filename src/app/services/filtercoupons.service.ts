@@ -5,15 +5,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FiltercouponsService {
-  catCoupsCountAPI = "https://adscombined.com/v1/public/api/CategoryCounts";
+  catCatCountAPI = "https://adscombined.com/v1/public/api/CategoryCounts";
   catCoupsAPI = "https://adscombined.com/v1/public/api/CategoryCoupons";
+  // allCatAPI = "https://adscombined.com/v1/public/api/AllCategories";
 
-  constructor( private catCoupCoun: HttpClient) { 
+
+  constructor( private catCount: HttpClient) { 
     
   }
 
-  getCoupsCount(){
 
+  getCatCount(catgoryFilter: any){
+    this.catCatCountAPI = "https://adscombined.com/v1/public/api/CategoryCounts?category="+catgoryFilter;
+    return this.catCount.post(this.catCatCountAPI, {});
   }
 
 
