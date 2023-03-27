@@ -21,13 +21,13 @@
           
           <div class="row">
             <div class="col-12 sub-cat" *ngFor="let category of CategoriesAre">
-              <h3>{{ category.Category }}</h3>
+              <h3><a href="filtercoupons/{{category.titleName}}">{{ category.Category }}</a></h3>
               <div class="row">
               <div class="col-sm-6 col-md-3 col-lg-2 col-6" *ngFor="let subCategory of category.sub_categories">
                 
                 <div class="cat-item" routerLink="coupons/subCategory.imgName">
-                  <img src="https://adscombined.com/category_images/sub/{{ subCategory.imgName }}.png" alt="{{subCategory.SubCategory}}"
-                    class="cat-item-img">
+                  <a routerLink="/filtercoupons/{{ subCategory.imgName }}"><img src="https://adscombined.com/category_images/sub/{{ subCategory.imgName }}.png" alt="{{subCategory.SubCategory}}"
+                    class="cat-item-img"></a>
                     <p>{{subCategory.SubCategory}}</p>
                 </div>
 

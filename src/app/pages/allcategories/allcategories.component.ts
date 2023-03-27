@@ -7,24 +7,27 @@ import { AllcategoriesService } from 'src/app/services/allcategories.service';
   styleUrls: ['./allcategories.component.css']
 })
 export class AllcategoriesComponent {
-  CategoriesAre:any;
-  categoriesIs:any;
-  category:any;
-  allCat:any;
+  CategoriesAre: any;
+  categoriesIs: any;
+  category: any;
+  allCat: any;
 
-  constructor( private getCat: AllcategoriesService){
+  constructor(private getCat: AllcategoriesService) {
 
-    this.getCat.getAllCategories().subscribe( (data:any) =>{
-      
+    this.getCat.getAllCategories().subscribe((data: any) => {
+
       this.CategoriesAre = data.categories;
-      
-      for (const category of this.CategoriesAre) {
+
+      for (const mCategory of this.CategoriesAre) {
         
-        if (category.sub_categories) {
-          for (const subCategory of category.sub_categories) {
+        mCategory['titleName'] = this.cleanTitle(mCategory.Category);
+
+        if (mCategory.sub_categories) {
+          for (const subCategory of mCategory.sub_categories) {
             subCategory['imgName'] = this.cleanTitle(subCategory.SubCategory);
           }
         }
+       
       }
       this.CategoriesAre = data.categories;
 
@@ -32,13 +35,13 @@ export class AllcategoriesComponent {
 
     })
   }
-   cleanTitle( name:any ) {
+  cleanTitle(name: any) {
     // Replace all non-alphanumeric characters with a space
     let cleaned = name.replaceAll(/[^a-zA-Z0-9]/g, ' ');
-    
+
     // Replace all consecutive spaces with a single hyphen
     cleaned = cleaned.replaceAll(/\s+/g, '-');
-    
+
     // Convert to lowercase and return the result
     return cleaned.toLowerCase();
 

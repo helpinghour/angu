@@ -8,6 +8,7 @@ import { RetailersComponent } from './pages/retailers/retailers.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { DealsComponent } from './pages/deals/deals.component';
 import { CouponsComponent } from './pages/coupons/coupons.component';
+import { FiltercouponsComponent } from './pages/filtercoupons/filtercoupons.component';
 import { AllcategoriesComponent } from './pages/allcategories/allcategories.component';
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'coupons',
     component: CouponsComponent
+  },
+  {
+    path: 'filtercoupons',
+    component: FiltercouponsComponent
   },
   {
     path: 'allcategories',
