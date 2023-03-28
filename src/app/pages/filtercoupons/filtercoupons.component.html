@@ -27,29 +27,16 @@
                             <ul class="mt-3">
                                 <li>
                                     <a>All Offers {{ TotalCouponsCount }}</a>
-                                    
-                                    <a *ngIf="thisiscool == 'red'">Free Shipping {{ FreeShippingCount }}</a>
-                                    <a>Clearance {{ ClearanceCount }}</a>
-                                    <a>Sale {{ SaleCount }}</a>
-                                    <a>Events {{ EventsCount }}</a>
-                                    <a>Gifts {{ GiftsCount }}</a>
-                                    <a>Coupon {{ CouponCount }}</a>
-                                    <a>Student {{ StudentCount }}</a>
-                                    <a>Referral {{ ReferralCount }}</a>
-                                    <a>Reward {{ RewardCount }}</a>
-                                    <a>Rebate {{ RebateCount }}</a>
-                                    <a>New Arrival {{ NewArrivalCount }}</a>
-                                    <a>BOGO {{ BOGOCount }}</a>
-                                    <a>PromoCount {{ PromoCount }}</a>
-                                    <a>Weekly Ad {{ WeeklyAdCount }}</a>
                                 </li>
-                                <li *ngIf="CashBackCount==0"> 
-                                    <a >Cashback {{ CashBackCount }}</a>
+                                <li *ngFor="let item of filteredCategoryCount | keyvalue">
+                                    <!-- {{item.key}} {{item.value}} -->
                                 </li>
+                                <!-- <li *ngFor="let key of Object.keys(filteredCategoryCount)">
+                                    {{ key }}={{ filteredCategoryCount[key] }}
+                                    <a>Weekly Ad</a>
+                                </li> -->
                             </ul>
 
-                           
-                              
                         </div>
                     </div>
                 </div>

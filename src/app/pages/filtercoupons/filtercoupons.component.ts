@@ -11,27 +11,10 @@ import { AllcategoriesService } from 'src/app/services/allcategories.service';
 })
 export class FiltercouponsComponent implements OnInit{
   catgoryFilter: any;
-  filteredCategory: any;
+  filteredCategoryCount: any;
   TotalCouponsCount: any;
   allCategoriesAre:any;
 
-  PromoCount:any;
-  FreeShippingCount:any;
-  ClearanceCount:any;
-  WeeklyAdCount:any;
-  SaleCount:any;
-  EventsCount:any;
-  GiftsCount:any;
-  CouponCount:any;
-  StudentCount:any;
-  ReferralCount:any;
-  RewardCount:any;
-  RebateCount:any;
-  NewArrivalCount:any;
-  BOGOCount:any;
-  CashBackCount:any;
-  showPromoCount = false;
-  thisiscool="red"
   encodedFilter: any;
 
   constructor(
@@ -40,34 +23,32 @@ export class FiltercouponsComponent implements OnInit{
     private allcat: AllcategoriesService) {}
   
   ngOnInit(): void {
+    //this will get categroyFilter value from routing and store it in catoryFilter variable
     this.catgoryFilter = this.route.snapshot.paramMap.get('catgoryFilter');
-    this.allcat.getAllCategories().subscribe( (data:any) =>{
-      this.allCategoriesAre = data;
-    })
+
+
+    // this.allcat.getAllCategories().subscribe( (data:any) =>{
+    //   this.allCategoriesAre = data;
+    // })
+
     // this.encodedFilter = this.decodeCleanedTitle(this.catgoryFilter);
-    console.log(this.catgoryFilter);
+    
 
       this.http.getCatCount(this.catgoryFilter).subscribe( (data:any) =>{
-      this.filteredCategory = data;
+      this.filteredCategoryCount = data;
+      
+      // console.log(this.filteredCategoryCount);
 
       this.TotalCouponsCount = data.TotalCouponsCount;
-      this.PromoCount = data.PromoCount;
+        console.log(this.TotalCouponsCount);
 
-      this.FreeShippingCount = data.FreeShippingCount;
-      this.ClearanceCount = data.ClearanceCount;
-      this.WeeklyAdCount = data.WeeklyAdCount;
-      this.SaleCount = data.SaleCount;
-      this.EventsCount = data.EventsCount;
-      this.GiftsCount = data.GiftsCount;
-      this.CouponCount = data.CouponCount;
-      this.StudentCount = data.StudentCount;
-      this.ReferralCount = data.ReferralCount;
-      this.RewardCount = data.RewardCount;
-      this.RebateCount = data.RebateCount;
-      this.NewArrivalCount = data.NewArrivalCount;
-      this.BOGOCount = data.BOGOCount;
-      this.CashBackCount = data.CashBackCount;
-      console.log(this.CashBackCount+"lll");
+      for (const key in this.filteredCategoryCount) {
+        // console.log(`${key}=${this.filteredCategoryCount[key]}`);
+      }
+
+      
+
+      
 
     })
     
