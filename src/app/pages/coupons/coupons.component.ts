@@ -31,6 +31,7 @@ export class CouponsComponent {
       this.allCoupons = data.coupons;
       this.allCouponsData = data;
       this.allCounts = data.counts;
+      
       console.log(this.allCounts);
 
     })
@@ -46,6 +47,7 @@ export class CouponsComponent {
   filterCoup(filter:any){
     console.log(filter);
     this.filter = filter;
+    this.currentPage = 0;
     this.getCoupons();
   }
   getAllCoup(){
@@ -53,6 +55,7 @@ export class CouponsComponent {
   }
   onCouponPageChange(event:any){
     this.currentPage = event - 1;
+    this.currentPage = 0;
     this.getCoupons();
   }
   

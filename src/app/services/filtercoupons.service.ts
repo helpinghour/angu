@@ -16,8 +16,8 @@ export class FiltercouponsService {
     this.catCatCountAPI = "https://adscombined.com/v1/public/api/CategoryCounts?category="+catgoryFilter;
     return this.catCount.post(this.catCatCountAPI, {});
   }
-  getCatCoups(catgoryFilter: any){
-    this.catCoupsAPI = "https://adscombined.com/v1/public/api/CategoryCoupons?category="+catgoryFilter+"&Page=0&PerPage=60&Filter=all&SubType=";
+  getCatCoups(catgoryFilter: any, currentPage: number, filter: string){
+    this.catCoupsAPI = "https://adscombined.com/v1/public/api/CategoryCoupons?category="+catgoryFilter+"&Page="+currentPage+"&PerPage=60&Filter="+filter+"&SubType=";
     return this.catCoup.get(this.catCoupsAPI, {});
   }
 

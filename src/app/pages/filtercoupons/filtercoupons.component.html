@@ -18,43 +18,70 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebarr">
                     <!-- <img src="https://www.shoppingsuperstars.com/image/ads.png" alt="ads" class="sidebar-ads"> -->
-                    <h2>Apparel & Assessories</h2>
-                    <p>Find best deals and coupons for apparel and accessories including shoes, clothes, and bags for men and women at best stores. Get a Variety of everyday styles and trends that are versatile for every occasion at their lowest prices. Save your time to find stores and enjoy massive discounts.</p>
+                    <h2>{{ mainCatTitle }}</h2>
+                    <p>Find best deals and coupons for apparel and accessories including shoes, clothes, and bags for
+                        men and women at best stores. Get a Variety of everyday styles and trends that are versatile for
+                        every occasion at their lowest prices. Save your time to find stores and enjoy massive
+                        discounts.</p>
+                        <div class="tags">
+                            <ul class="mt-3">
+                                <li *ngFor="let catto of subCatsAre">
+                                    <a href="">{{ catto.SubCategory }}</a>
+                                </li>
+                            </ul>
+                        </div>
                 </div>
+
                 <div class="col-lg-8 col-md-12 col-sm-12 border">
-                    <h1>Apparel and Assessories</h1>
+
+                    <!-- <h1 *ngFor="let item of filteredCategoryCount | keyvalue">
+                        <span *ngIf="item.key === 'Category'">{{ item.value }}</span>
+                    </h1> -->
+                    <h1>{{ mainCatTitle }}</h1>
+                    
                     <h4>Verified Coupons for March 8, 2023</h4>
                     <div class="col-12">
                         <div class="tags">
                             <ul class="mt-3">
                                 <li>
-                                    <a>All Offers {{ TotalCouponsCount }}</a>
+                                    <a (click)="filterCoup('all')">All Offers <strong>{{ TotalCouponsCount }}</strong></a>
                                 </li>
                                 <li *ngFor="let item of filteredCategoryCount | keyvalue">
-                                    <a *ngIf="item.value!=true"> {{sliceData(item.key)}}: {{item.value}}</a>
-                                </li>
+                                    <ng-container *ngIf="isNumber(item.value) && item.key !== 'TotalCouponsCount' && item.value !== 0">
+                                      <a (click)="filterCoup(sliceData(item.key))">{{ sliceData(item.key) }}: <strong>{{ item.value }}</strong></a>
+                                    </ng-container>
+                                  </li>
+                                  
                             </ul>
                         </div>
                     </div>
                     <style>
-                        
 
-                        
                     </style>
-                    <div class="col-12" *ngFor="let fCoup of filteredCategoryCoupons">
+                    <div class="col-12" *ngFor="let fCoup of filteredCategoryCoupons | paginate:{
+                        currentPage: currentPage + 1,
+                        itemsPerPage: perPage,
+                        totalItems: TotalFitrdCounts
+                    }; let i = index">
                         <div class="card-fcoup card align-items-center">
                             <img src="https://adscombined.com/admin/public/storage/{{ fCoup.Logo }}" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ fCoup.Title }}</h5>
-                                <p class="c-date"><span class="c-l-date">{{ fCoup.updated_at }}</span><span class="c-r-date">{{ fCoup.created_at }}</span></p>
+                                <p class="c-date"><span class="c-l-date">{{ fCoup.updated_at }}</span><span
+                                        class="c-r-date">{{ fCoup.created_at }}</span></p>
                                 <div>
-                                    <a href="#" class="btn btn-warning c-off-price">{{ fCoup.OfferNumber }}</a>
-                                    <a href="#" class="btn btn-primary float-end text-end c-get-coup">Get This Coupon</a>
+                                    <a href="#" class="btn btn-warning c-off-price">$ {{ fCoup.OfferNumber }} Off</a>
+                                    <a class="btn btns first c-get-coup">Get This Coupon</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
+                    <div class="my-pagination">
+                        <pagination-controls previousLabel="Prev" nextLabel="Next" currentPage="currentPage + 1"
+                            (pageChange)="onFilterCoupPageChange($event)">
+                        </pagination-controls>
+                    </div>
                 </div>
             </div>
         </div>

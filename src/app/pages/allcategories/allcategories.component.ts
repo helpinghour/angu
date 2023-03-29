@@ -35,6 +35,12 @@ export class AllcategoriesComponent {
 
     })
   }
+  encodeToURL(value: any) {
+    let str = value;
+    let encodedStr = encodeURIComponent(str).replaceAll('&', '%26');
+    return encodedStr;
+  }
+  
   cleanTitle(name: any) {
     // Replace all non-alphanumeric characters with a space
     let cleaned = name.replaceAll(/[^a-zA-Z0-9]/g, ' ');
