@@ -3898,3 +3898,40 @@ position: absolute;
     transform: translate(-200px, 0px);
 } */
 }
+.card-fcoup.card {
+  margin-bottom: 1em;
+  flex-direction: row;
+}
+
+.card-fcoup.card-body {
+  padding: 0.5em 1em;
+}
+
+.card-fcoup.card img {
+  max-width: 7em;
+  border: 1px solid gray;
+  border-bottom-left-radius: calc(0.25rem - 1px);
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-left: 10px solid rebeccapurple;
+  margin-left: -5px;
+}
+.c-date{
+  font-size: 12px;
+}
+.c-date .c-r-date{
+  float: right;
+}
+
+@media screen and (max-width: 575px) {
+  .card-fcoup.card {
+    margin-bottom: 1em;
+    flex-direction: column;
+  }
+  .card-fcoup.card img{
+    border-left: 0;
+  margin-left: 0;
+  margin-top: 10px;
+  border: 1px solid gray;
+  }
+
+}

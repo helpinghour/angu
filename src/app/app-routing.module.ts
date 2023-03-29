@@ -48,7 +48,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
+    initialNavigation: 'enabledNonBlocking'
 })],
   exports: [RouterModule]
 })

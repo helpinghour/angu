@@ -19,6 +19,7 @@ import { RetailersComponent } from './pages/retailers/retailers.component';
 import { BrandsComponent } from './pages/brands/brands.component';
 import { DealsComponent } from './pages/deals/deals.component';
 import { CouponsComponent } from './pages/coupons/coupons.component';
+import { FiltercouponsComponent } from './pages/filtercoupons/filtercoupons.component';
 import { AllcategoriesComponent } from './pages/allcategories/allcategories.component';
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AllcategoriesComponent } from './pages/allcategories/allcategories.comp
     BrandsComponent,
     DealsComponent,
     CouponsComponent,
-    AllcategoriesComponent
+    AllcategoriesComponent,
+    FiltercouponsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
