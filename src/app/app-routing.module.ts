@@ -35,12 +35,16 @@ const routes: Routes = [
     component: CouponsComponent
   },
   {
+    path: 'allcategories',
+    component: AllcategoriesComponent
+  },
+  {
     path: 'filtercoupons/:catgoryFilter',
     component: FiltercouponsComponent
   },
   {
-    path: 'allcategories',
-    component: AllcategoriesComponent
+    path: 'filtercoupons/:catgoryFilter/:subCatFilter',
+    component: FiltercouponsComponent
   }
   
   ]

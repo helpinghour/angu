@@ -11,88 +11,105 @@ import { Observable } from 'rxjs';
   templateUrl: './filtercoupons.component.html',
   styleUrls: ['./filtercoupons.component.css']
 })
-export class FiltercouponsComponent implements OnInit{
+export class FiltercouponsComponent implements OnInit {
   TotalCouponsCount: any;
-  TotalFitrdCounts:any;
+  TotalFitrdCounts: any;
   catgoryFilter: any;
-  currentPage:number = 0;
+  subCatFilter: any;
+  currentPage: number = 0;
   perPage: number = 60;
-  filter:string = "all";
+  filter: string = "all";
   filteredCategoryCount: any;
-  filteredCategoryCoupons:any;
-  allCategoriesAre:any;
-  catsAre:any;
-  mainCatIs:any;
-  mainCatTitle:any;
-  subCatsAre:any;
-
+  filteredCategoryCoupons: any;
+  allCategoriesAre: any;
+  catsAre: any;
+  mainCatIs: any;
+  mainCatTitle: any;
+  subCatsAre: any;
+  allSubCatsAre: any;
+  subFilter:any;
+  subCategories: string[] = [];
 
   encodedFilter: any;
-  sliceKey:any;
-
+  sliceKey: any;
   isNumber(value: any): boolean {
     return typeof value === 'number';
   }
-  
+
   constructor(
     private route: ActivatedRoute,
     private http: FiltercouponsService,
     private catCoups: FiltercouponsService,
-    private allcat: AllcategoriesService)
-    {}
-  
+    private allcat: AllcategoriesService) { }
+
   ngOnInit(): void {
     //this will get categroyFilter value from routing and store it in catoryFilter variable
     this.catgoryFilter = this.route.snapshot.paramMap.get('catgoryFilter');
-    
-      this.http.getCatCount(this.catgoryFilter).subscribe( (data:any) =>{
-        this.TotalCouponsCount = data.TotalCouponsCount;
-        this.filteredCategoryCount = data;
-      
-      })
-      
+    this.subFilter = this.route.snapshot.paramMap.get('subCatFilter');
+    // console.log(this.subCatFilter);
 
-      this.getfiterCoupons();
 
-    
-      this.allcat.getAllCategories().subscribe( (data:any) =>{
+    this.getfiterCounts(); //calling method defined below
+    this.getfiterCoupons(); //calling method defined below
+
+
+    this.allcat.getAllCategories().subscribe((data: any) => {
       this.allCategoriesAre = data;
       
 
       for (const key in this.allCategoriesAre.categories) {
         this.mainCatIs = this.allCategoriesAre.categories[key].Category;
-        
 
-        if(this.mainCatIs === this.catgoryFilter){
-          // console.log(this.mainCatIs);
+        if (this.mainCatIs === decodeURIComponent(this.catgoryFilter)) {
+
           this.mainCatTitle = this.mainCatIs;
 
           this.subCatsAre = this.allCategoriesAre.categories[key].sub_categories;
-          console.log(this.subCatsAre);
 
-          // for ( const subcat in this.subCatsAre.SubCategory){
-          // this.subCatsAre = this.mainCatIs.sub_categories[subcat].SubCategory;
-          // }
-          // console.log(this.subCatsAre);
-
+          for (let subCat of this.subCatsAre) {
+            
+            subCat.SubCategory
+            this.subCategories.push(subCat.SubCategory);
+             
+          }
+          
         }
       }
-      
+
     })
 
     // this.encodedFilter = this.decodeCleanedTitle(this.catgoryFilter);
-    
+
   }
-  getfiterCoupons(){
-    this.catCoups.getCatCoups(this.catgoryFilter, this.currentPage, this.filter).subscribe( (data:any) =>{
-      
-      this.TotalFitrdCounts = data.TotalCoupons;
-      this.filteredCategoryCoupons = data.coupons;
-      console.log(this.filteredCategoryCoupons);
+
+  getfiterCounts(){
+    
+    if(this.subFilter === null){
+      console.log("helll");
+      this.subFilter = "";
+    }
+
+    this.http.getCatCount(this.catgoryFilter, this.subFilter).subscribe((data: any) => {
+      this.TotalCouponsCount = data.TotalCouponsCount;
+      this.filteredCategoryCount = data;
 
     })
   }
-   
+  getfiterCoupons() {
+
+    if(this.subFilter === null){
+      console.log("helll");
+      this.subFilter = "";
+    }
+    
+    this.catCoups.getCatCoups(this.catgoryFilter, this.subFilter, this.currentPage, this.filter).subscribe((data: any) => {
+      this.TotalFitrdCounts = data.TotalCoupons;
+      this.filteredCategoryCoupons = data.coupons;
+      // console.log(this.filteredCategoryCoupons);
+
+    })
+  }
+
   sliceData(key: any) {
     this.sliceKey = key.slice(0, -5);
     let str = this.sliceKey;
@@ -102,31 +119,24 @@ export class FiltercouponsComponent implements OnInit{
     }
     return str;
   }
-  
-  filterCoup(filter:any){
+
+  filterCoup(filter: any) {
     this.filter = filter;
+    this.currentPage = 0;
     this.getfiterCoupons();
   }
-  onFilterCoupPageChange(event:any){
+  
+  subCatFilters(subFilter:any){
+    this.subFilter =  subFilter;
+    this.currentPage = 0;
+    this.getfiterCoupons();
+    this.getfiterCounts();
+  }
+
+  onFilterCoupPageChange(event: any) {
     this.currentPage = event - 1;
     this.getfiterCoupons();
   }
 
-  // decodeCleanedTitle(cleanedTitle: string): string {
-  //   // Replace hyphens with spaces
-  //   let spaceSeparatedString = cleanedTitle.replaceAll('-', '&');
-  
-  //   // Convert to title case
-  //   let words = spaceSeparatedString.split(' ');
-  //   let titleCaseWords = words.map((word) => {
-  //     return word.charAt(0).toUpperCase() + word.slice(1);
-  //   });
-  //   let titleCaseString = titleCaseWords.join(' ');
-  
-  //   // Replace percent-encoded characters with their corresponding characters
-  //   let decodedString = decodeURIComponent(titleCaseString);
-  
-  //   return decodedString;
-  // }
 
 }

@@ -21,10 +21,12 @@
           <div class="tags">
             <ul class="mt-3">
               <li>
-                <a (click)="getAllCoup()">All Offers {{ total_coupons }}</a>
+                <a (click)="filterCoup('all')">All Offers {{ total_coupons }}</a>
               </li>
               <li *ngFor="let coup of allCounts | keyvalue">
+                <ng-container *ngIf="coup.value != '0'">
                 <a (click)="filterCoup(sliceData(coup.key))">{{ sliceData(coup.key) }}: {{ coup.value }}</a>
+              </ng-container>
               </li>
             </ul>
           </div>

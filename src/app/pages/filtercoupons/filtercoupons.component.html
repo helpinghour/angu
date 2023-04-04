@@ -7,7 +7,7 @@
                 <ol>
                     <li><a routerLink="/">Home</a></li>
                     <li><a routerLink="/allcategories">All Categories</a></li>
-                    <li>CatgoryName</li>
+                    <li>{{ mainCatTitle }}</li>
                 </ol>
             </div>
 
@@ -17,7 +17,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebarr">
-                    <!-- <img src="https://www.shoppingsuperstars.com/image/ads.png" alt="ads" class="sidebar-ads"> -->
                     <h2>{{ mainCatTitle }}</h2>
                     <p>Find best deals and coupons for apparel and accessories including shoes, clothes, and bags for
                         men and women at best stores. Get a Variety of everyday styles and trends that are versatile for
@@ -25,8 +24,8 @@
                         discounts.</p>
                         <div class="tags">
                             <ul class="mt-3">
-                                <li *ngFor="let catto of subCatsAre">
-                                    <a href="">{{ catto.SubCategory }}</a>
+                                <li *ngFor="let subFilter of subCategories">
+                                <a (click)="subCatFilters(subFilter)">{{ subFilter }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -44,7 +43,7 @@
                         <div class="tags">
                             <ul class="mt-3">
                                 <li>
-                                    <a (click)="filterCoup('all')">All Offers <strong>{{ TotalCouponsCount }}</strong></a>
+                                    <a (click)="filterCoup('all')">All Offers: <strong>{{ TotalCouponsCount }}</strong></a>
                                 </li>
                                 <li *ngFor="let item of filteredCategoryCount | keyvalue">
                                     <ng-container *ngIf="isNumber(item.value) && item.key !== 'TotalCouponsCount' && item.value !== 0">

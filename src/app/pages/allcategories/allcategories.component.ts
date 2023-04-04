@@ -40,7 +40,12 @@ export class AllcategoriesComponent {
     let encodedStr = encodeURIComponent(str).replaceAll('&', '%26');
     return encodedStr;
   }
-  
+  removeHypen(value:any){
+    let str = value;
+    let cleanedStr = str.replaceAll('-', '&');
+    return cleanedStr;
+    
+  }
   cleanTitle(name: any) {
     // Replace all non-alphanumeric characters with a space
     let cleaned = name.replaceAll(/[^a-zA-Z0-9]/g, ' ');

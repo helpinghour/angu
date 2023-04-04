@@ -50,9 +50,6 @@ export class CouponsComponent {
     this.currentPage = 0;
     this.getCoupons();
   }
-  getAllCoup(){
-    this.getCoupons();
-  }
   onCouponPageChange(event:any){
     this.currentPage = event - 1;
     this.currentPage = 0;
