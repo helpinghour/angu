@@ -35,6 +35,10 @@ const routes: Routes = [
     component: CouponsComponent
   },
   {
+    path: 'coupons/:coupon',
+    component: CouponsComponent
+  },
+  {
     path: 'allcategories',
     component: AllcategoriesComponent
   },

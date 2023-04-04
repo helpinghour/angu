@@ -18,13 +18,15 @@ export class BrandsService {
     return this.allbrand.get(this.allBrand);
   }
 
-  getAllBrands( page: number, perPage: number, filter:any ="" ): Observable<any>{
+  getAllBrands( page: number, perPage: number, filter:any ="", pCat:any, sCat:any ): Observable<any>{
     
     const params = {
       Type: 'Brand',
       Page: page.toString(),
       PerPage: perPage.toString(),
-      Filter: filter.toString()
+      Filter: filter.toString(),
+      Category: pCat,
+      SubCategory: sCat
     }
     
     return this.http.get( this.apiUrl, {params})

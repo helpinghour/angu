@@ -18,6 +18,9 @@ export class BrandsComponent {
   currentPage = 0;
   perPage: number = 60;
   filter:any;
+  selectedCategory: any;
+  pCat:any = "";
+  sCat:any = "";
 
   constructor( private allCatgories: BrandsService, private allBrandData: BrandsService){
 
@@ -33,7 +36,7 @@ export class BrandsComponent {
   }
 
   getBrands(): void{
-      this.allBrandData.getAllBrands( this.currentPage, this.perPage, this.filter ).subscribe( (response:any) => {
+      this.allBrandData.getAllBrands( this.currentPage, this.perPage, this.filter, this.pCat, this.sCat ).subscribe( (response:any) => {
       this.allBrandsData = response.stores;
       this.brandsCount = response.total_stores;
       this.allBrandsAre = response.stores;
@@ -53,6 +56,20 @@ export class BrandsComponent {
     this.filter = filter;
     this.getBrands();
   }
+
+  filterPCat(filterPCat:any){ // to filter child categories (SubCategory)
+    this.currentPage = 0
+      this.sCat = "";
+      this.filter = "";
+      this.pCat = filterPCat;
+    this.getBrands();
+  }
+  filterSCat(filterSCat:any){ // to filter child categories (SubCategory)
+    this.currentPage = 0
+    this.sCat = filterSCat;
+    this.getBrands();
+  }
+
   onBrandPageChange( event: any){
     this.currentPage = event - 1;
     this.getBrands();

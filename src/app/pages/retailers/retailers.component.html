@@ -71,9 +71,17 @@
           <div class="tags">
             <ul class="mt-3">
               <li *ngFor="let cat of allRetailCat">
-                <a href="">{{cat.Category}}</a>
+                <a (click)="filterPCat(cat.Category); selectedCategory = cat">{{cat.Category}}</a>
               </li>
             </ul>
+
+            <ul *ngIf="selectedCategory" class="mt-3">
+              <h3>{{selectedCategory.Category}}</h3>
+              <li *ngFor="let subCategory of selectedCategory.sub_categories">
+                <a (click)="filterSCat(subCategory.SubCategory)">{{subCategory.SubCategory}}</a>
+              </li>
+            </ul>
+            
           </div>
         </div>
       </div>

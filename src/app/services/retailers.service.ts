@@ -21,12 +21,14 @@ export class RetailersService {
     return this.allRetail.get(this.allRetailers);
   }
 
-  getAllRetailers( page: number, perPage: number, filter:any ): Observable<any>{
+  getAllRetailers( page: number, perPage: number, filter:any, pCat:any, sCat:any ): Observable<any>{
     const params = {
       Type: 'Retailer',
       Page: page.toString(),
       PerPage: perPage.toString(),
-      Filter: filter.toString()
+      Filter: filter.toString(),
+      Category: pCat,
+      SubCategory: sCat,
     }
     return this.http.get( this.apiUrl, {params} );
 
