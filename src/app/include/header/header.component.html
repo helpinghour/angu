@@ -14,34 +14,34 @@
         <li><a class="nav-link " routerLink="retailers" routerLinkActive="active">Retailers</a></li>
         <li><a class="nav-link " routerLink="brands" routerLinkActive="active">Brands</a></li>
         <li><a class="nav-link " routerLink="deals" routerLinkActive="active">Deals</a></li>
-        <li class="dropdown megamenu"><a routerLink="coupons" routerLinkActive="active">
+        <li class="dropdown megamenu"><a [routerLink]="['/coupons', 'all']" routerLinkActive="active">
             <span>Coupons</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
             <li>
               <a [routerLink]="['/coupons', 'coupon']">Coupons</a>
-              <a routerLink="coupons/promos">Promos</a>
-              <a routerLink="coupons/free-shipping">Free Shipping</a>
-              <a routerLink="coupons/clearance">Clearance</a>
-              <a routerLink="coupons/weekly-ads">Weekly Ad</a>
-              <a routerLink="coupons/today-ads">Today's Ad</a>
+              <a [routerLink]="['/coupons', 'promos']">Promos</a>
+              <a [routerLink]="['/coupons', 'free shipping']">Free Shipping</a>
+              <a [routerLink]="['/coupons', 'clearance']">Clearance</a>
+              <a [routerLink]="['/coupons', 'Weekly Ad']">Weekly Ad</a>
+              <a [routerLink]="['/coupons', 'today ads']">Today's Ad</a>
             </li>
 
             <li>
-              <a routerLink="coupons/sale">Sales</a>
-              <a routerLink="coupons/event">Events</a>
-              <a routerLink="coupons/gift">Gifts</a>
-              <a routerLink="coupons/referral">Referral</a>
-              <a routerLink="coupons/reward">Reward</a>
-              <a routerLink="coupons/cash-back">Cash Back</a>
-              
+              <a [routerLink]="['/coupons', 'sale']">Sales</a>
+              <a [routerLink]="['/coupons', 'event']">Events</a>
+              <a [routerLink]="['/coupons', 'gift']">Gifts</a>
+              <a [routerLink]="['/coupons', 'referral']">Referral</a>
+              <a [routerLink]="['/coupons', 'reward']">Reward</a>
+              <a [routerLink]="['/coupons', 'cash back']">Cash Back</a>
             </li>
+
             <li>
-              <a routerLink="coupons/rebate">Rebate</a>
-              <a routerLink="coupons/printable-coupon">Printable Coupon</a>
-              <a routerLink="coupons/seasonal">Seasonal</a>
-              <a routerLink="coupons/bogo">BOGO</a>
-              <a routerLink="coupons/travel">Travel</a>
-              <a routerLink="coupons/all">View All</a>
+              <a [routerLink]="['/coupons', 'rebate']">Rebate</a>
+              <a [routerLink]="['/coupons', 'printable coupon']">Printable Coupon</a>
+              <a [routerLink]="['/coupons', 'seasonal']">Seasonal</a>
+              <a [routerLink]="['/coupons', 'bogo']">BOGO</a>
+              <a [routerLink]="['/coupons', 'travel']">Travel</a>
+              <a [routerLink]="['/coupons', 'new arrivall']">New Arrival</a>
             </li>
           </ul>
 
@@ -67,10 +67,10 @@
         <li class="dropdown"><a routerLink="allcategories" routerLinkActive="active"><span>Categories</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul class="dropdown-menu-lg-end">
-            <li class="dropdown"><a href=""><span>Apparel & Accessories</span>
+            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Apparel%20%26%20Accessories']"><span>Apparel & Accessories</span>
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
-                <li><a href="#">Clothing</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Apparel%20%26%20Accessories', 'clothing']">Clothing</a></li>
                 <li><a href="#">Shoes</a></li>
                 <li><a href="#">Jewelry</a></li>
                 <li><a href="#">Sunglasses & Eyewear</a></li>
@@ -78,7 +78,7 @@
                 <li><a href="#">View All</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href=""><span>Arts & Entertainment</span>
+            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Arts%20%26%20Entertainment']"><span>Arts & Entertainment</span>
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
                 <li><a href="#">Arts</a></li>
@@ -89,7 +89,7 @@
                 <li><a href="#">View All</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href=""><span>Automotive & Mechanics</span>
+            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Automotive%20%26%20Mechanics']"><span>Automotive & Mechanics</span>
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
                 <li><a href="#">Auto Body Parts & Mirrors</a></li>
@@ -100,7 +100,7 @@
                 <li><a href="#">View All</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a href=""><span>Baby & Nursery</span>
+            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Baby%20%26%20Nursery']"><span>Baby & Nursery</span>
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
                 <li><a href="#">Summer</a></li>

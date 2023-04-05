@@ -43,20 +43,10 @@ export class FiltercouponsComponent implements OnInit {
     private allcat: AllcategoriesService) { }
 
   ngOnInit(): void {
-    //this will get categroyFilter value from routing and store it in catoryFilter variable
-    this.catgoryFilter = this.route.snapshot.paramMap.get('catgoryFilter');
-    this.subFilter = this.route.snapshot.paramMap.get('subCatFilter');
-    // console.log(this.subCatFilter);
-
-
-    this.getfiterCounts(); //calling method defined below
-    this.getfiterCoupons(); //calling method defined below
-
-
+    
     this.allcat.getAllCategories().subscribe((data: any) => {
       this.allCategoriesAre = data;
       
-
       for (const key in this.allCategoriesAre.categories) {
         this.mainCatIs = this.allCategoriesAre.categories[key].Category;
 
@@ -78,12 +68,27 @@ export class FiltercouponsComponent implements OnInit {
 
     })
 
+    this.route.paramMap.subscribe( params => {
+      this.subFilter = params.get('subCatfilter');
+      this.getfiterCounts();
+    });
+
+    //this will get categroyFilter value from routing and store it in catoryFilter variable
+    this.route.paramMap.subscribe(params => {
+      this.catgoryFilter = params.get('catgoryFilter');
+      this.getfiterCoupons();
+    
+    });
+
+    this.getfiterCounts(); //calling method defined below
+    this.getfiterCoupons(); //calling method defined below
+
     // this.encodedFilter = this.decodeCleanedTitle(this.catgoryFilter);
 
   }
 
+  
   getfiterCounts(){
-    
     if(this.subFilter === null){
       console.log("helll");
       this.subFilter = "";
@@ -95,8 +100,8 @@ export class FiltercouponsComponent implements OnInit {
 
     })
   }
-  getfiterCoupons() {
 
+  getfiterCoupons() {
     if(this.subFilter === null){
       console.log("helll");
       this.subFilter = "";
@@ -110,17 +115,7 @@ export class FiltercouponsComponent implements OnInit {
     })
   }
 
-  sliceData(key: any) {
-    this.sliceKey = key.slice(0, -5);
-    let str = this.sliceKey;
-    str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
-    if (str.charAt(str.length - 1) === 's') {
-      str = str.slice(0, -1);
-    }
-    return str;
-  }
-
-  filterCoup(filter: any) {
+  categoryFilters(filter: any) {
     this.filter = filter;
     this.currentPage = 0;
     this.getfiterCoupons();
@@ -131,6 +126,16 @@ export class FiltercouponsComponent implements OnInit {
     this.currentPage = 0;
     this.getfiterCoupons();
     this.getfiterCounts();
+  }
+
+  sliceData(key: any) {
+    this.sliceKey = key.slice(0, -5);
+    let str = this.sliceKey;
+    str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+    if (str.charAt(str.length - 1) === 's') {
+      str = str.slice(0, -1);
+    }
+    return str;
   }
 
   onFilterCoupPageChange(event: any) {

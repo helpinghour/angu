@@ -31,11 +31,7 @@ const routes: Routes = [
     component: DealsComponent
   },
   {
-    path: 'coupons',
-    component: CouponsComponent
-  },
-  {
-    path: 'coupons/:coupon',
+    path: 'coupons/:coupFilter',
     component: CouponsComponent
   },
   {
