@@ -43,10 +43,11 @@
               totalItems: totalStores
             }; let i=index ">
 
-              <div class="card h-100">
+              <div class="card h-100" title="{{ stores.StoreName }} top Coupons, Deals & Promotions Codes">
                 <div>
-                  <img class="card-img-top" src="https://adscombined.com/admin/public/storage/{{stores.Image}}"
+                  <a [routerLink]="['filtercoupons', stores.StoreURL]"><img class="card-img-top" src="https://adscombined.com/admin/public/storage/{{stores.Image}}"
                     alt="{{stores.Image}}" height="160">
+                  </a>
                 </div>
                 <div class="card-body store-detail text-center">
                   <h5 class="card-title " title="{{stores.StoreName}}">{{stores.StoreName}}</h5>

@@ -3403,10 +3403,15 @@ section {
     cursor: pointer;
     transition: all 0.3s;
 }
-.link-item>img {
+.link-item a>img {
     height: 50px;
     width: 50px;
     margin-bottom: 8px;
+}
+.link-item >img {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 8px;
 }
 .link-item>p {
     margin: 0px;

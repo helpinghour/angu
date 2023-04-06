@@ -16,10 +16,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   { path: 'stores',
+  title: 'Stores Page',
     component: StoresComponent
   },
   {
     path: 'retailers',
+    title: 'Retailers component',
     component: RetailersComponent
   },
   {
@@ -39,11 +41,11 @@ const routes: Routes = [
     component: AllcategoriesComponent
   },
   {
-    path: 'filtercoupons/:catgoryFilter',
+    path: 'filtercoupons/:categoryFilter',
     component: FiltercouponsComponent
   },
   {
-    path: 'filtercoupons/:catgoryFilter/:subCatFilter',
+    path: 'filtercoupons/:categoryFilter/:subCategoryFilter',
     component: FiltercouponsComponent
   }
   

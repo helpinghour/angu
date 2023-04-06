@@ -55,16 +55,18 @@
                   totalItems: totalDeals
                 }; let i = index ">
 
-                <a href="">
+                <a href="#" title="{{ deals.Title }}">
                   <div class="deal-item service-item">
                     <span class="deals-off-des">Save &#36;{{deals.PriceDifference}}</span>
                     <div class="img deals-img">
-                      <img src="{{deals.Image}}" class="img-fluid" alt="">
+                      <img src="{{ deals.Image }}" class="img-fluid" alt="{{ deals.Image }}">
                       <i class="bi bi-heart"></i>
                     </div>
                     <div class="details position-relative align-items-stretch">
                       <div class="d-logo">
-                        <img src="https://adscombined.com/admin/public/storage/{{deals.Logo}}" alt="">
+                        <a [routerLink]="['filtercoupons', deals.StoreURL]">
+                          <img src="https://adscombined.com/admin/public/storage/{{deals.Logo}}" alt="">
+                        </a>
                       </div>
                       <p class="deal-p-price my-2"><span>{{deals.Price1}}</span><span>{{deals.Price2}}</span></p>
                       <h5 class="text-limit-2">{{deals.Title}}</h5>
@@ -75,7 +77,8 @@
               <!-- End Deals Item -->
             </div>
             <div class="my-pagination mt-4">
-              <pagination-controls previousLabel="Prev" nextLabel="Next" currentPage="currentPage + 1" (pageChange)="onDealsPageChange($event)">
+              <pagination-controls previousLabel="Prev" nextLabel="Next" currentPage="currentPage + 1"
+                (pageChange)="onDealsPageChange($event)">
               </pagination-controls>
             </div>
 

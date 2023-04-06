@@ -27,7 +27,7 @@ export class FiltercouponsComponent implements OnInit {
   mainCatTitle: any;
   subCatsAre: any;
   allSubCatsAre: any;
-  subFilter:any;
+  subFilter: any;
   subCategories: string[] = [];
 
   encodedFilter: any;
@@ -43,10 +43,10 @@ export class FiltercouponsComponent implements OnInit {
     private allcat: AllcategoriesService) { }
 
   ngOnInit(): void {
-    
+
     this.allcat.getAllCategories().subscribe((data: any) => {
       this.allCategoriesAre = data;
-      
+
       for (const key in this.allCategoriesAre.categories) {
         this.mainCatIs = this.allCategoriesAre.categories[key].Category;
 
@@ -57,76 +57,73 @@ export class FiltercouponsComponent implements OnInit {
           this.subCatsAre = this.allCategoriesAre.categories[key].sub_categories;
 
           for (let subCat of this.subCatsAre) {
-            
+
             subCat.SubCategory
             this.subCategories.push(subCat.SubCategory);
-             
+
           }
-          
+
         }
       }
 
     })
 
-    this.route.paramMap.subscribe( params => {
-      this.subFilter = params.get('subCatfilter');
-      this.getfiterCounts();
-    });
-
     //this will get categroyFilter value from routing and store it in catoryFilter variable
-    this.route.paramMap.subscribe(params => {
-      this.catgoryFilter = params.get('catgoryFilter');
-      this.getfiterCoupons();
-    
+
+    this.route.params.subscribe(params => {
+
+      this.catgoryFilter = params['categoryFilter'];
+      this.subCatFilter = params['subCategoryFilter'];
+
+      this.getCatFiterCoupons();
+
     });
 
-    this.getfiterCounts(); //calling method defined below
-    this.getfiterCoupons(); //calling method defined below
+    this.route.params.subscribe(params => {
+      this.catgoryFilter = params['categoryFilter'];
+      this.subCatFilter = params['subCategoryFilter'];
 
-    // this.encodedFilter = this.decodeCleanedTitle(this.catgoryFilter);
+      this.getSubCatFiter();
+
+    });
 
   }
 
-  
-  getfiterCounts(){
-    if(this.subFilter === null){
-      console.log("helll");
-      this.subFilter = "";
+  getCatFiterCoupons() {
+    
+    if (this.subCatFilter === null) {
+      this.subCatFilter = "";
     }
 
-    this.http.getCatCount(this.catgoryFilter, this.subFilter).subscribe((data: any) => {
+    this.catCoups.getCatCoups(this.catgoryFilter, this.subCatFilter, this.currentPage, this.filter).subscribe((data: any) => {
+      
+      this.TotalFitrdCounts = data.TotalCoupons;
+      this.filteredCategoryCoupons = data.coupons;
+
+    })
+    this.filter = "all";
+
+  }
+
+  getSubCatFiter() {
+    if (this.subCatFilter === null) {
+      this.subCatFilter = "";
+    }
+
+    this.http.getCatCount(this.catgoryFilter, this.subCatFilter).subscribe((data: any) => {
       this.TotalCouponsCount = data.TotalCouponsCount;
       this.filteredCategoryCount = data;
 
     })
   }
 
-  getfiterCoupons() {
-    if(this.subFilter === null){
-      console.log("helll");
-      this.subFilter = "";
-    }
-    
-    this.catCoups.getCatCoups(this.catgoryFilter, this.subFilter, this.currentPage, this.filter).subscribe((data: any) => {
-      this.TotalFitrdCounts = data.TotalCoupons;
-      this.filteredCategoryCoupons = data.coupons;
-      // console.log(this.filteredCategoryCoupons);
-
-    })
-  }
-
-  categoryFilters(filter: any) {
+  categoryCountFilter(filter: any) {
     this.filter = filter;
     this.currentPage = 0;
-    this.getfiterCoupons();
+    this.getCatFiterCoupons();
+    
   }
-  
-  subCatFilters(subFilter:any){
-    this.subFilter =  subFilter;
-    this.currentPage = 0;
-    this.getfiterCoupons();
-    this.getfiterCounts();
-  }
+
 
   sliceData(key: any) {
     this.sliceKey = key.slice(0, -5);
@@ -140,7 +137,7 @@ export class FiltercouponsComponent implements OnInit {
 
   onFilterCoupPageChange(event: any) {
     this.currentPage = event - 1;
-    this.getfiterCoupons();
+    this.getCatFiterCoupons();
   }
 
 
