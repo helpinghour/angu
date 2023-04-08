@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from 'src/app/services/header.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,20 +11,28 @@ export class HeaderComponent implements OnInit{
   searchR:any;
   coupFilter:any;
 
-  constructor( private route: ActivatedRoute ){
-  }
+  constructor( private route: ActivatedRoute, private router: Router ){ }
+  isLoggedIn: boolean = false;
+  
   
   ngOnInit(): void{
-
+    const token = localStorage.getItem('token');
+    if(token){
+      // User is logged in
+      console.log('User is logged in');
+      this.isLoggedIn = true;
+      // you can also set a boolean variable to true to use it in the template for showing/hiding certain elements
+    }
   }
 
   
-  // ngOnInit(): void {
-  //   this.route.paramMap.subscribe(params => {
-  //     this.coupFilter = params.get('coupFilter');
-  //     console.log(this.coupFilter);
-  //   });
-  // }
+  
+
+  logout() {
+    localStorage.removeItem('token');
+    this.isLoggedIn = false;
+    this.router.navigate(['/login']);
+  }
 
 
 }

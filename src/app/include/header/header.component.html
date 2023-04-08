@@ -99,7 +99,9 @@
       </ul>
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
     </nav><!-- .navbar -->
-    <a class="btn-getstarted" routerLinkActive="active" routerLink="/login">Login</a>
+    <a class="btn-getstarted" *ngIf="!isLoggedIn" routerLinkActive="active" routerLink="/login">Login</a>
+    <a class="btn-getstarted" *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+
   </div>
 </header>
 <!-- End Header -->

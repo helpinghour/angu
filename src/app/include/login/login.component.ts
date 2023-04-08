@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
 
 @Component({
@@ -10,9 +11,9 @@ export class LoginComponent {
   responseIs:any;
   responseMsg:any;
   loginSucksess:any;
-  flag: boolean = false;
+  
 
-  constructor ( private authSerivce: AuthenticateService){};
+  constructor ( private authSerivce: AuthenticateService, private router: Router){};
 
   getLoginForm(data: {email: string, password: any }){
     this.authSerivce.loginUser(data).subscribe( (response) =>{
@@ -22,10 +23,18 @@ export class LoginComponent {
         this.responseMsg = this.responseIs.error;
         console.log(this.responseMsg);
       }else{
+        console.log(response);
+
+         // User is authenticated, save the token to local storage
+         localStorage.setItem('token', this.responseIs.user.token);
+
+        // User is authenticated, redirect to another page
+        this.router.navigate(['/stores']);
         
       }
 
     })
   }
+  
 
 }

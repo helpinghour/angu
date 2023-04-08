@@ -17,5 +17,6 @@ export class AuthenticateService {
   loginUser(data:any){
     return this.userAuth.post(this.logURL, data);
   }
-   
+  
+  
 }
