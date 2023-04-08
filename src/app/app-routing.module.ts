@@ -10,26 +10,30 @@ import { DealsComponent } from './pages/deals/deals.component';
 import { CouponsComponent } from './pages/coupons/coupons.component';
 import { FiltercouponsComponent } from './pages/filtercoupons/filtercoupons.component';
 import { AllcategoriesComponent } from './pages/allcategories/allcategories.component';
+import { LoginComponent } from './include/login/login.component';
+import { RegisterComponent } from './include/register/register.component';
 
 const routes: Routes = [
   { path: '',
     component: HomeComponent
   },
   { path: 'stores',
-  title: 'Stores Page',
+    title: 'All Stores | Adscombined.com',
     component: StoresComponent
   },
   {
     path: 'retailers',
-    title: 'Retailers component',
+    title: 'All Retailers | Adscombined.com',
     component: RetailersComponent
   },
   {
     path: 'brands',
+    title: 'All Brands | Adscombined.com',
     component: BrandsComponent
   },
   {
     path: 'deals',
+    title: 'All Deals | Adscombined.com',
     component: DealsComponent
   },
   {
@@ -47,6 +51,16 @@ const routes: Routes = [
   {
     path: 'filtercoupons/:categoryFilter/:subCategoryFilter',
     component: FiltercouponsComponent
+  },
+  {
+    path: 'login',
+    title: 'Login | Adscombined.com',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    title: 'Register | Adscombined.com',
+    component: RegisterComponent
   }
   
   ]

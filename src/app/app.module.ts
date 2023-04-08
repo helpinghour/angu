@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -22,10 +22,13 @@ import { DealsComponent } from './pages/deals/deals.component';
 import { CouponsComponent } from './pages/coupons/coupons.component';
 import { FiltercouponsComponent } from './pages/filtercoupons/filtercoupons.component';
 import { AllcategoriesComponent } from './pages/allcategories/allcategories.component';
+import { RegisterComponent } from './include/register/register.component';
+import { LoginComponent } from './include/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     HeaderComponent,
     FooterComponent,
     HomeComponent,
@@ -35,7 +38,9 @@ import { AllcategoriesComponent } from './pages/allcategories/allcategories.comp
     DealsComponent,
     CouponsComponent,
     AllcategoriesComponent,
-    FiltercouponsComponent
+    FiltercouponsComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -45,6 +50,7 @@ import { AllcategoriesComponent } from './pages/allcategories/allcategories.comp
     CommonModule,
     FormsModule,
     NgxPaginationModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

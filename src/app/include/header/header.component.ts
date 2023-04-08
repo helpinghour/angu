@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit{
 
   }
 
+  
   // ngOnInit(): void {
   //   this.route.paramMap.subscribe(params => {
   //     this.coupFilter = params.get('coupFilter');

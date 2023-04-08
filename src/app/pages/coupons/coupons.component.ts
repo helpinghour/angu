@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CouponsService } from 'src/app/services/coupons.service';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-coupons',
   templateUrl: './coupons.component.html',
-  styleUrls: ['./coupons.component.css']
+  styleUrls: ['./coupons.component.css'],
+  template: ''
 })
 
 export class CouponsComponent {
@@ -15,7 +17,7 @@ export class CouponsComponent {
   totalCountsPagination:any;
 
   totalFilter: string = "all";
-  
+  pageTitle: any;
   allCouponsData: any;
   currentPage = 0;
   perPage: number = 60;
@@ -25,7 +27,7 @@ export class CouponsComponent {
   filter:any;
   
 
-  constructor( private route: ActivatedRoute, private couponsData: CouponsService, private totalofferCount: CouponsService ){ }
+  constructor( private titleService: Title, private route: ActivatedRoute, private couponsData: CouponsService, private totalofferCount: CouponsService ){ }
 
   ngOnInit(): void {
     
@@ -53,6 +55,8 @@ export class CouponsComponent {
       this.allCouponsData = data;
       this.allCounts = data.counts;
       this.totalCountsPagination = data.total_coupons;
+      this.pageTitle = data.PageTitle;
+      this.titleService.setTitle(this.pageTitle); // Set the page title dynamically
       
     })
   }

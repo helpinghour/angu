@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -12,6 +13,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./filtercoupons.component.css']
 })
 export class FiltercouponsComponent implements OnInit {
+  pageTitle:any;
   TotalCouponsCount: any;
   TotalFitrdCounts: any;
   catgoryFilter: any;
@@ -24,6 +26,8 @@ export class FiltercouponsComponent implements OnInit {
   allCategoriesAre: any;
   catsAre: any;
   mainCatIs: any;
+  mainCatDescriptionIs:any;
+  showDescription:any
   mainCatTitle: any;
   subCatsAre: any;
   allSubCatsAre: any;
@@ -37,6 +41,7 @@ export class FiltercouponsComponent implements OnInit {
   }
 
   constructor(
+    private titleService: Title,
     private route: ActivatedRoute,
     private http: FiltercouponsService,
     private catCoups: FiltercouponsService,
@@ -49,17 +54,29 @@ export class FiltercouponsComponent implements OnInit {
 
       for (const key in this.allCategoriesAre.categories) {
         this.mainCatIs = this.allCategoriesAre.categories[key].Category;
+        this.mainCatDescriptionIs = this.allCategoriesAre.categories[key].Description;
 
         if (this.mainCatIs === decodeURIComponent(this.catgoryFilter)) {
 
+          this.showDescription = this.mainCatDescriptionIs;
+          this.showDescription = this.showDescription.replace(/<a([^>]+)>/gi, '<span$1>'); // to replace description <a> tags
+          this.showDescription = this.showDescription.replace(/<\/a>/gi, '</span>'); // to replace description <a> tags
+          
           this.mainCatTitle = this.mainCatIs;
 
           this.subCatsAre = this.allCategoriesAre.categories[key].sub_categories;
-
+          
           for (let subCat of this.subCatsAre) {
 
             subCat.SubCategory
-            this.subCategories.push(subCat.SubCategory);
+            this.subCategories.push(subCat.SubCategory); // injected a new key based on sub_categories
+            
+            // to check sub description
+            if ( subCat.SubCategory === decodeURIComponent(this.subCatFilter)){
+                this.showDescription = subCat.Description;
+              }
+            // to check sub description /
+            
 
           }
 
@@ -98,6 +115,9 @@ export class FiltercouponsComponent implements OnInit {
     this.catCoups.getCatCoups(this.catgoryFilter, this.subCatFilter, this.currentPage, this.filter).subscribe((data: any) => {
       
       this.TotalFitrdCounts = data.TotalCoupons;
+      this.pageTitle = data.PageTitle;
+      this.titleService.setTitle(this.pageTitle); // Set the page title dynamically
+      
       this.filteredCategoryCoupons = data.coupons;
 
     })

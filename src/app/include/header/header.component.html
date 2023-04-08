@@ -3,8 +3,8 @@
   <div class="container d-flex align-items-center justify-content-between">
     <a routerLink="/" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
       <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="https://adscombined.com/main_logo.png" alt="adscombined"> -->
-      <span>AdsCombined</span>
+      <img src="assets/img/adscombined_logo.png" alt="adscombined">
+      <!-- <span>AdsCombined</span> -->
     </a>
     <nav id="navbar" class="navbar">
       <ul>
@@ -45,24 +45,6 @@
             </li>
           </ul>
 
-          <!-- <ul class="mt-3 " class="tags">
-              <li>
-                <a routerLink="coupons/coupon">Coupons</a>
-                <a routerLink="coupons/promos">Promos</a>
-                <a routerLink="coupons/coupon">Free Shipping</a>
-                <a routerLink="coupons/clearance">Clearance</a>
-                <a routerLink="coupons/weekly-ads">Weekly Ad</a>
-                <a routerLink="coupons/today-ads">Today's Ad</a>
-                <a routerLink="coupons/sale">Sale</a>
-                <a routerLink="coupons/event">Event</a>
-                <a routerLink="coupons/gift">Gift</a>
-                <a routerLink="coupons/promos">Promos</a>
-                <a routerLink="coupons/promos">Promos</a>
-                <a routerLink="coupons/promos">Promos</a>
-
-              </li>
-            </ul> -->
-
         </li>
         <li class="dropdown"><a routerLink="allcategories" routerLinkActive="active"><span>Categories</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -71,52 +53,53 @@
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
                 <li><a [routerLink]="['/filtercoupons', 'Apparel & Accessories', 'clothing']">Clothing</a></li>
-                <li><a href="#">Shoes</a></li>
-                <li><a href="#">Jewelry</a></li>
-                <li><a href="#">Sunglasses & Eyewear</a></li>
-                <li><a href="#">Bags</a></li>
-                <li><a href="#">View All</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Apparel & Accessories', 'Shoes']">Shoes</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Apparel & Accessories', 'Jewelry']">Jewelry</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Apparel & Accessories', 'Sunglasses & Eyewear']">Sunglasses & Eyewear</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Apparel & Accessories', 'Bags']">Bags</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Apparel & Accessories']">View All</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Arts%20%26%20Entertainment']"><span>Arts & Entertainment</span>
+            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Arts & Entertainment']"><span>Arts & Entertainment</span>
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
-                <li><a href="#">Arts</a></li>
-                <li><a href="#">Entertainment</a></li>
-                <li><a href="#">Prints</a></li>
-                <li><a href="#">SCanvas Prints</a></li>
-                <li><a href="#">Photo Gifts</a></li>
-                <li><a href="#">View All</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Arts & Entertainment', 'Arts']">Arts</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Arts & Entertainment', 'Entertainment']">Entertainment</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Arts & Entertainment', 'Prints']">Prints</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Arts & Entertainment', 'SCanvas Prints']">SCanvas Prints</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Arts & Entertainment', 'Photo Gifts']">Photo Gifts</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Arts & Entertainment']">View All</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Automotive%20%26%20Mechanics']"><span>Automotive & Mechanics</span>
+            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Automotive & Mechanics']"><span>Automotive & Mechanics</span>
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
-                <li><a href="#">Auto Body Parts & Mirrors</a></li>
-                <li><a href="#">Headlights & Lighting</a></li>
-                <li><a href="#">Engine & Drivetrain</a></li>
-                <li><a href="#">Brakes & Suspension & Steering</a></li>
-                <li><a href="#">Wheels & Tires</a></li>
-                <li><a href="#">View All</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Automotive & Mechanics', 'Auto Body Parts & Mirrors']">Auto Body Parts & Mirrors</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Automotive & Mechanics', 'Headlights & Lighting']">Headlights & Lighting</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Automotive & Mechanics', 'Engine & Drivetrain']">Engine & Drivetrain</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Automotive & Mechanics', 'Brakes & Suspension & Steering']">Brakes & Suspension & Steering</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Automotive & Mechanics', 'Wheels & Tires']">Wheels & Tires</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Automotive & Mechanics']">View All</a></li>
               </ul>
             </li>
-            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Baby%20%26%20Nursery']"><span>Baby & Nursery</span>
+            <li class="dropdown"><a [routerLink]="['/filtercoupons', 'Baby & Nursery']"><span>Baby & Nursery</span>
               <i class="bi bi-chevron-down dropdown-indicator"></i></a>
               <ul class="">
-                <li><a href="#">Summer</a></li>
-                <li><a href="#">Winter</a></li>
-                <li><a href="#">Babies</a></li>
-                <li><a href="#">Toddler</a></li>
-                <li><a href="#">Matching Outfits</a></li>
-                <li><a href="#">View All</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Baby & Nursery', 'Summer']">Summer</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Baby & Nursery', 'Winter']">Winter</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Baby & Nursery', 'Babies']">Babies</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Baby & Nursery', 'Toddler']">Toddler</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Baby & Nursery', 'Matching Outfits']">Matching Outfits</a></li>
+                <li><a [routerLink]="['/filtercoupons', 'Baby & Nursery']">View All</a></li>
               </ul>
             </li>
+            <li class="dropdown"><a routerLink="allcategories"><span>View All Categories</span></a></li>
           </ul>
         </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
     </nav><!-- .navbar -->
-    <a class="btn-getstarted scrollto" href="#">Login</a>
+    <a class="btn-getstarted" routerLinkActive="active" routerLink="/login">Login</a>
   </div>
 </header>
 <!-- End Header -->
